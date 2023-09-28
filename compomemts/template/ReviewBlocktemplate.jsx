@@ -1,6 +1,5 @@
-'use client'
 import React from 'react';
-import StarRatings from 'react-star-ratings';
+// import StarRatings from 'react-star-ratings';
 import styles from '../../style/reviewBlockTemplate.module.scss';
 import Image from 'next/image'
 const ReviewBlocktemplate = ({item}) => {
