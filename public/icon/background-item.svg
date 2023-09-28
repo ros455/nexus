@@ -1,0 +1,23 @@
+<svg width="303" height="303" viewBox="0 0 303 303" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="background-item" opacity="0.58">
+<mask id="mask0_146_610" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="38" y="38" width="226" height="226">
+<circle id="Ellipse 26" cx="151.376" cy="151.376" r="112.5" transform="rotate(-27.0745 151.376 151.376)" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_146_610)">
+<rect id="Rectangle 66" x="-18.1201" y="136.584" width="299.472" height="7.92253" transform="rotate(-27.0745 -18.1201 136.584)" fill="#FF6969"/>
+<rect id="Rectangle 68" x="-10.9087" y="150.693" width="299.472" height="7.92253" transform="rotate(-27.0745 -10.9087 150.693)" fill="#FF6969"/>
+<rect id="Rectangle 69" x="-3.69727" y="164.803" width="299.472" height="7.92253" transform="rotate(-27.0745 -3.69727 164.803)" fill="#FF6969"/>
+<rect id="Rectangle 70" x="3.51514" y="178.912" width="299.472" height="7.92253" transform="rotate(-27.0745 3.51514 178.912)" fill="#FF6969"/>
+<rect id="Rectangle 71" x="10.7266" y="193.02" width="299.472" height="7.92253" transform="rotate(-27.0745 10.7266 193.02)" fill="#FF6969"/>
+<rect id="Rectangle 72" x="17.939" y="207.127" width="299.472" height="7.92253" transform="rotate(-27.0745 17.939 207.127)" fill="#FF6969"/>
+<rect id="Rectangle 73" x="25.1504" y="221.238" width="299.472" height="7.92253" transform="rotate(-27.0745 25.1504 221.238)" fill="#FF6969"/>
+<rect id="Rectangle 74" x="32.3628" y="235.344" width="299.472" height="7.92253" transform="rotate(-27.0745 32.3628 235.344)" fill="#FF6969"/>
+<rect id="Rectangle 75" x="39.5747" y="249.453" width="299.472" height="7.92253" transform="rotate(-27.0745 39.5747 249.453)" fill="#FF6969"/>
+<rect id="Rectangle 76" x="46.7866" y="263.562" width="299.472" height="7.92253" transform="rotate(-27.0745 46.7866 263.562)" fill="#FF6969"/>
+<rect id="Rectangle 77" x="53.998" y="277.67" width="299.472" height="7.92253" transform="rotate(-27.0745 53.998 277.67)" fill="#FF6969"/>
+<rect id="Rectangle 78" x="61.2095" y="291.779" width="299.472" height="7.92253" transform="rotate(-27.0745 61.2095 291.779)" fill="#FF6969"/>
+<rect id="Rectangle 79" x="68.4214" y="305.889" width="299.472" height="7.92253" transform="rotate(-27.0745 68.4214 305.889)" fill="#FF6969"/>
+<rect id="Rectangle 67" x="-25.3325" y="122.477" width="299.472" height="7.92253" transform="rotate(-27.0745 -25.3325 122.477)" fill="#FF6969"/>
+</g>
+</g>
+</svg>

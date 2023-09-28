@@ -1,0 +1,32 @@
+@import './template/colors.scss';
+
+.title_tempalte_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.title_tempalte_text{
+    font-size: 34px;
+    padding-bottom: 10px;
+    position: relative;
+    color: $color_text_black;
+
+    &:after {
+        content: "";
+        height: 5px;
+        background-color: red;
+        width: 50%;
+        border-radius: 15px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}

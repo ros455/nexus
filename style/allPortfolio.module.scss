@@ -1,0 +1,53 @@
+@import './template/colors.scss';
+.all_portfolio_wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: $color_white;
+}
+
+.all_portfolio_header {
+    margin: 20px 0px;
+}
+
+.all_portfolio_title_wrap {
+    margin: 40px 0px;
+}
+
+.all_portfolio_title_text {
+    font-size: 60px;
+    font-weight: 400;
+    color: $color_text_black;
+    text-align: center;
+}
+
+.all_portfolio_category_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.all_portfolio_category_item {
+    background-color: $color_light;
+    padding: 20px 40px;
+    font-size: 25px;
+    color: $color_text_black;
+}
+
+.all_portfolio_content_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+.all_portfolio_content_block {
+    width: 30%;
+    max-height: 500px;
+}
+
+.all_portfolio_content_block_img {
+    width: 100%;
+    height: 100%;
+    background: $color_light;
+    object-fit: contain;
+}

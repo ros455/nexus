@@ -1,0 +1,176 @@
+@import './template/colors.scss';
+
+.why_us_wrap {
+    background-color: $color_light;
+}
+
+.why_us_title_wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.why_us_title {
+    font-size: 34px;
+    color: $color_text_black;
+    max-width: 850px;
+    span {
+        color: $color_red_main;
+    }
+}
+
+.why_us_main_content_wrap {
+    display: flex;
+}
+
+.why_us_img_wrap {
+    width: 50%;
+    display: flex;
+    z-index: 0;
+}
+
+.why_us_img {
+    width: 100%;
+    height: auto;
+}
+
+.why_us_text_wrap {
+    width: 35%;
+    text-align: start;
+    padding-top: 80px;
+    font-size: 18px;
+    line-height: 20px;
+    p {
+        padding-bottom: 24px;
+        color: $color_text_black;
+    }
+}
+
+.why_us_icon_wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.why_us_icon_number {
+    font-size: 40px;
+    font-weight: 800;
+}
+.why_us_icon_text {
+    font-size: 20px;
+}
+
+.why_us_icon_item_wrap {
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
+    margin: 0px 30px;
+    width: 230px;
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: $color_text_black;
+    z-index: 1;
+    position: relative;
+    background-color: $color_white;
+    border-radius: 10px;
+    &:hover {
+        color: $color_red_main;
+    }
+}
+
+.why_us_icon {
+    width: auto;
+    height: 80px;
+}
+
+@media(max-width:1460px) {
+    .why_us_text_wrap {
+        width: 40%;
+    }
+}
+
+@media(max-width:860px) {
+    .why_us_title_wrap {
+        margin-top: 20px;
+    }
+
+    .why_us_main_content_and_icons_wrap {
+        display: flex;
+    }
+
+    .why_us_icon_wrap {
+        flex-direction: column;
+    } 
+
+    .why_us_main_content_wrap {
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+    }
+
+    .why_us_icon_item_wrap {
+        margin: 30px 30px 30px 0px;
+    }
+
+    .why_us_text_wrap {
+        width: 90%;
+        padding-top: 40px
+    }
+
+    .why_us_main_content_wrap {
+        justify-content: flex-end;
+        margin-left: 20px;
+    }
+
+    .why_us_icon_item_wrap {
+        width: 180px;
+        height: 180px;
+    }
+
+    .why_us_img_wrap {
+        width: 100%;
+    }
+}
+
+@media(max-width:550px) {
+    .why_us_icon_item_wrap {
+        width: 120px;
+        height: 160px;
+    }
+
+    .why_us_icon_number {
+        font-size: 30px;
+        font-weight: 800;
+    }
+    .why_us_icon_text {
+        font-size: 16px;
+    }
+
+    .why_us_icon {
+        width: 30px;
+    } 
+
+    .why_us_title {
+        max-width: 400px;
+    }
+
+    .why_us_icon_wrap {
+        justify-content: flex-start;
+    }
+
+    .why_us_img {
+        width: 130%;
+    }
+}
+
+@media(max-width:450px) {
+    .why_us_icon_item_wrap {
+        margin: 20px 10px 20px 0px;
+    }
+
+    .why_us_main_content_wrap {
+        margin-left: 10px;
+    }
+
+    .why_us_img {
+        width: 150%;
+    }
+}

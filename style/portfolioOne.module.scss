@@ -1,0 +1,75 @@
+@import './template/colors.scss';
+
+.portfolio_one_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 40px 0px;
+    gap: 50px;
+    background-color: $color_white;
+}
+
+.portfolio_one_img_wrap {
+    width: 50%;
+}
+
+.portfolio_one_img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.portfolio_one_content_wrap {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.portfolio_one_content_block {
+    background-color: $color_light_grey;
+    border-radius: 10px;
+    padding: 60px 0px;
+    line-height: normal;
+}
+
+.portfolio_one_content_title_wrap {
+
+}
+
+.portfolio_one_content_title_text {
+    font-size: 45px;
+    font-weight: 400;
+}
+
+.portfolio_one_content_category_wrap {
+
+}
+
+.portfolio_one_content_category_text {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.portfolio_one_content_tags_wrap {
+    margin-top: 50px;
+}
+.portfolio_one_content_tags_block {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+    gap: 40px;
+}
+
+.portfolio_one_content_tags_round {
+    width: 50px;
+    height: 50px;
+    background-color: $color_dark;
+    border-radius: 50%;
+}
+
+.portfolio_one_content_tags_text {
+    font-size: 30px;
+    font-weight: 400;
+}

@@ -1,0 +1,30 @@
+@import './template//colors.scss';
+.header_wrap {
+    // background-color: $color_secondary;
+    background: var(--background, linear-gradient(90deg, #F3F1F2 56.51%, #E7E1E2 100%));
+    display: flex;
+    padding: 0px 0px 5px 0px;
+    align-items: self-end;
+}
+
+.logo {
+    width: 30%;
+    font-weight: 900;
+    font-size: 22px;
+    color: $color_text_black;
+    a {
+        color: $color_text_black;
+    }
+}
+
+.nav_block {
+    width: 50%;
+}
+
+.nav_wrap {
+    display: flex;
+    justify-content: space-around;
+    a {
+        color: $color_text_black;
+    }
+}
