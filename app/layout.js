@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import '../style/style-null.css';
 import Header from '@/compomemts/Header';
 import Footer from '@/compomemts/Footer';
-import VisibleArrowUp from '@/compomemts/ArrowUp/VisibleArrowUp';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -17,7 +16,6 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Header/>
         {children}
-        {/* <VisibleArrowUp/> */}
         <Footer/>
         </body>
     </html>
