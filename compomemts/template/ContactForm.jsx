@@ -69,7 +69,7 @@ const ContactForm = () => {
           <div className={styles.contact_form_phone_input_messengers_wrap}>
             {messengersArray.map((item) => (
               <div
-                onClick={() => setChoseMassanger(url)}
+                onClick={() => setChoseMassanger(item.url)}
                 className={item.url == choseMassanger ? styles.active_icon : ""}
                 key={item.url}
               >

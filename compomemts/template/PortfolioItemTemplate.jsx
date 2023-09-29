@@ -9,8 +9,10 @@ const PortfolioItemTemplate = ({item}) => {
             <Image className={styles.portfolio_template_img} 
             src={`/projects/${item.mainImage}`}
             alt={item.mainImage}
-            width={1000}
-            height={1000}/>
+            width={300}
+            height={350}
+            // layout='responsive'
+            />
             </Link>
         </div>
     );

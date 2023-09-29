@@ -25,11 +25,11 @@
 }
 
 .portfolio_template_img {
-    width: 100%;
-    height: 100%;
+    // width: auto;
+    // height: auto;
     border-radius: 10px;
-    background: #F8F9FA;
-    object-fit: contain;
+    // background: #F8F9FA;
+    object-fit: cover;
 }
 
 .portfolio_button_wrap {

@@ -7,6 +7,7 @@ import SevenSteps from './SevenSteps';
 import SiteDream from './SiteDream';
 import Reviews from './Reviews';
 import Portfolios from './Portfolios';
+import VisibleArrowUp from './ArrowUp/VisibleArrowUp';
 const MainPage = () => {
     return (
         <>
@@ -18,6 +19,7 @@ const MainPage = () => {
             <SevenSteps/>
             <SiteDream/>
             <Reviews/>
+            <VisibleArrowUp/>
         </>
     );
 };
