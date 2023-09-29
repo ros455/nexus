@@ -47,6 +47,7 @@ const AllPortfoliosTemplate = ({allPortfolio}) => {
                 href={`/portfolios/${item._id}`}
                 key={idx}
                 className={styles.all_portfolio_content_block}
+                prefetch={false}
               >
                 <Image
                   src={`/projects/${item.mainImage}`}
