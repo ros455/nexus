@@ -8,17 +8,17 @@ import SiteDream from './SiteDream';
 import Reviews from './Reviews';
 import Portfolios from './Portfolios';
 import VisibleArrowUp from './ArrowUp/VisibleArrowUp';
-const MainPage = () => {
+const MainPage = ({lang}) => {
     return (
         <>
-            <CallToAction/>
-            <WhyWorkWithUs/>
-            <WeGuaranteeAndMainDirections/>
+            <CallToAction lang={lang}/>
+            <WhyWorkWithUs lang={lang}/>
+            <WeGuaranteeAndMainDirections lang={lang}/>
             <Portfolios/>
-            <FocusAtention/>
-            <SevenSteps/>
-            <SiteDream/>
-            <Reviews/>
+            <FocusAtention lang={lang}/>
+            <SevenSteps lang={lang}/>
+            <SiteDream lang={lang}/>
+            <Reviews lang={lang}/>
             <VisibleArrowUp/>
         </>
     );

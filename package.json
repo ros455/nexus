@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.4.2",
     "axios": "^1.5.1",
     "framer-motion": "^10.16.4",
+    "negotiator": "^0.6.3",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",

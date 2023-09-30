@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../style/allPortfolio.module.scss';
+import styles from '../../../style/allPortfolio.module.scss';
 import { getAllPortfolio } from '@/requests/portfolio';
 import AllPortfoliosTemplate from '@/compomemts/template/AllPortfoliosTemplate';
 export const metadata = {

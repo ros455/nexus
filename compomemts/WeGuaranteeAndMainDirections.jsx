@@ -7,43 +7,45 @@ import {BiSupport} from 'react-icons/bi';
 import {BsFillDpadFill} from 'react-icons/bs';
 import { MdDashboardCustomize } from 'react-icons/md';
 import { TbDeviceDesktopCode } from 'react-icons/tb';
+import { getDictionary } from '@/lib/dictionary';
 
-const guaranteArray = [
-    {
-        icon: <AiOutlineDownSquare className={styles.guarante_directions_icon}/>,
-        text: 'Виконання поставленої задачі'
-    },
-    {
-        icon: <BiSupport className={styles.guarante_directions_icon}/>,
-        text: 'Підтримку вашого сайту 14 днів'
-    },
-    {
-        icon: <BsFillDpadFill className={styles.guarante_directions_icon}/>,
-        text: 'Повний інструктаж в користуванні'
-    },
-]
+const WeGuaranteeAndMainDirections = async ({lang}) => {
+    const { page } = await getDictionary(lang)
 
-const directionsArray = [
-    {
-        icon: <MdDashboardCustomize className={styles.guarante_directions_icon}/>,
-        text: 'Дизайн сайтів'
-    },
-    {
-        icon: <TbDeviceDesktopCode className={styles.guarante_directions_icon}/>,
-        text: 'Створення сайтів'
-    },
-    {
-        icon: <BiSupport className={styles.guarante_directions_icon}/>,
-        text: 'Підтримка сайтів'
-    },
-]
-
-const WeGuaranteeAndMainDirections = () => {
+    const guaranteArray = [
+        {
+            icon: <AiOutlineDownSquare className={styles.guarante_directions_icon}/>,
+            text: page.WeGuarante.icon_text1
+        },
+        {
+            icon: <BiSupport className={styles.guarante_directions_icon}/>,
+            text: page.WeGuarante.icon_text2
+        },
+        {
+            icon: <BsFillDpadFill className={styles.guarante_directions_icon}/>,
+            text: page.WeGuarante.icon_text3
+        },
+    ]
+    
+    const directionsArray = [
+        {
+            icon: <MdDashboardCustomize className={styles.guarante_directions_icon}/>,
+            text: page.MainDirections.icon_text1
+        },
+        {
+            icon: <TbDeviceDesktopCode className={styles.guarante_directions_icon}/>,
+            text: page.MainDirections.icon_text2
+        },
+        {
+            icon: <BiSupport className={styles.guarante_directions_icon}/>,
+            text: page.MainDirections.icon_text3
+        },
+    ]
     // Problem
     return (
         <div className={styles.guarante_directions_wrap}>
             <div className={styles.guarante_wrap}>
-                <TitleTemplate text={'Ми гарантуємо'}/>
+                <TitleTemplate text={page.WeGuarante.title}/>
                 <div className={styles.guarante_item_wrap}>
                     {guaranteArray.map((item,idx) => (
                         <GuaranteAndDirectionsTemplate item={item} key={idx}/>
@@ -51,7 +53,7 @@ const WeGuaranteeAndMainDirections = () => {
                 </div>
             </div>
             <div className={styles.guarante_wrap}>
-            <TitleTemplate text={'Основні напрямки'}/>
+            <TitleTemplate text={page.MainDirections.title}/>
                 <div className={styles.guarante_item_wrap}>
                 {directionsArray.map((item,idx) => (
                         <GuaranteAndDirectionsTemplate item={item} key={idx}/>
