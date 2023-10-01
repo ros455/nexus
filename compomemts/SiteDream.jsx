@@ -3,17 +3,20 @@ import TitleTemplate from './template/TitleTemplate';
 import ContactForm from './template/ContactForm';
 import styles from '../style/siteDream.module.scss';
 import Image from 'next/image'
-const SiteDream = () => {
+import computor from '../public/img/computor.svg';
+import { getDictionary } from '@/lib/dictionary';
+const SiteDream = async ({lang}) => {
+    const { page } = await getDictionary(lang)
     return (
         <div className={styles.site_dream_wrap}>
-            <TitleTemplate text={'Створимо сайт, про який мрієте'}/>
+            <TitleTemplate text={page.SiteDream.title}/>
             <div className={styles.site_dream_main_block}>
                 <div className={styles.site_dream_contact_form_wrap}>
-                    <ContactForm/>
+                    <ContactForm page={page}/>
                 </div>
                 <div className={styles.site_dream_image_wrap}>
                     <Image 
-                    src='/img/computor.svg'
+                    src={computor}
                     alt='computor'
                     width={500}
                     height={500}

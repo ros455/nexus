@@ -1,0 +1,93 @@
+{
+    "navigation": {
+      "home": "Home",
+      "about": "About"
+    },
+    "page": {
+      "home": {
+        "title": "Welcome to NextJs i18n",
+        "description": "Internationalization in NextJs 13 App router"
+      },
+      "about": {
+        "title": "About Us",
+        "description": "This is the about page"
+      },
+      "CallToAction": {
+        "title_p1":"Development",
+        "title_p2": "Sites",
+        "title_p3": "With an individual approach",
+        "title_p4": "FOR BUSINESS",
+        "list_1": "Let's develop an effective sales tool",
+        "list_2": "Let's increase brand recognition",
+        "list_3": "We will attract a flow of customers",
+        "button_text": "Create a site"
+      },
+      "WhyWorkWithUs": {
+       "title_part1": "Why should you",
+       "title_part2": "work with us?",
+       "title_part3": " How can we help in the development of your website?",
+       "text_p1": "Welcome to our company's website!",
+       "text_p2": "We are a young and energetic team of professionals, consisting of a web designer, frontend and backend developers who are engaged in the creation of sites and layouts.",
+       "text_p3": "Our goal is to help our clients achieve their goals through high-quality development and design of their web projects.",
+       "text_p4": "We offer an individual approach to each project to ensure that Our client receives a solution that fully meets his needs and requirements. We understand that every project has its own unique requirements and constraints, and we are committed to working with our clients to ensure a successful project completion. Our team has years of experience in creating a variety of websites, layouts and other web applications.",
+       "text_p5": "We use modern technologies and tools to ensure the best performance and quality of development.",
+       "text_icon1":"Years on the market",
+       "text_icon2":"Designs have been created",
+       "text_icon3":"Completed projects",
+       "text_icon4":"Happy customers"
+      },
+      "WeGuarante": {
+        "title": "We guarantee",
+        "icon_text1":"Fulfillment of the assigned task",
+        "icon_text2":"Support for your site for 14 days",
+        "icon_text3":"Full instruction in use"
+      },
+      "MainDirections": {
+        "title": "Main directions",
+        "icon_text1":"Website design",
+        "icon_text2":"Creation of sites",
+        "icon_text3":"Website support"
+      },
+      "ContactForm": {
+        "title": "Fill out the form and I will contact you to discuss the cost and terms of creating the site within 1 hour",
+        "text1":"What is your name?",
+        "text2":"How to contact you?",
+        "text3":"Phone number or mail"
+      },
+      "SevenSteps": {
+        "title": "Website in 7 steps",
+        "icon_text1": "Discussion",
+        "icon_text2": "Briefing",
+        "icon_text3": "Design",
+        "icon_text4": "Site layout",
+        "icon_text5": "Filling",
+        "icon_text6": "Testing",
+        "icon_text7": "Launching"
+      },
+      "SiteDream": {
+        "title": "Let's create the site you dream of"
+      },
+      "Reviews": {
+        "title": "Reviews",
+        "text": "Each feedback allows me to better assess my strengths and weaknesses",
+        "reviews_name1": "Yuri Stone",
+        "reviews_name2": "Kirill Pavlenko",
+        "reviews_name3": "Artem Sergeevich",
+        "reviews_name4": "Anastasia Zakharchuk",
+        "reviews_name5": "Sergey Martunuk",
+        "reviews_name6": "Andriy Demin",
+        "reviews_name7": "Vitaly Orlov",
+        "reviews_name8": "Dmytro Gezrdava",
+        "reviews_text1": "Good day everyone. Cooperation with Alexander was very pleasant and fruitful. I would like to note the high professionalism and ability to pick up my ideas. Alexander understood what I wanted from the beginning. It is also nice that he was able to realize all my wishes. I used to often hear 'it's impossible to do'. The site is complicated, there were many edits and changes on my part, but everything was done. I highly recommend for cooperation.",
+        "reviews_text2": "The work was done excellently, quickly and professionally, Oleksandr kept in touch with us 24/7 via chat and video calls to answer all questions and demonstrate the progress of the project! We recommend this performer to everyone!",
+        "reviews_text3": "Everything is clear, fast and convenient. And most importantly - professionally. I recommend",
+        "reviews_text4": "The performer performed everything at the highest level! The work was done as comfortably and efficiently as possible. Thank you!",
+        "reviews_text5": "Everything is great, I recommend it. Responsibly approach tasks",
+        "reviews_text6": "Thank you very much, you performed the task professionally and clearly. They respond to inquiries very quickly and deal with difficulties very professionally! I recommend!",
+        "reviews_text7": "The task is completed, the calculator works, everything is fine.",
+        "reviews_text8": "Good work in a short time, I recommend!",
+        "Checked": "Checked"
+      }
+    }
+  }
+  

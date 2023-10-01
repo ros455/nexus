@@ -1,6 +1,8 @@
 import React from "react";
 import styles from '../style/header.module.scss';
 import Link from "next/link";
+import { getDictionary } from '@/lib/dictionary'
+import LocaleSwitcher from './locale-switcher'
 const Header = () => {
   return (
     <header className={styles.header_wrap}>
@@ -16,6 +18,7 @@ const Header = () => {
           <Link href='/contsct'>Контакти</Link>
         </ul>
       </nav>
+      <LocaleSwitcher />
     </header>
   );
 };
