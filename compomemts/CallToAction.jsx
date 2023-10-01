@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../style/callToAction.module.scss";
 import Image from 'next/image'
+import ImgFonFirstSection from '../public/img/fon-img-firsht-second2.png'
 const CallToAction = () => {
   return (
     <div className={styles.call_to_action_wrap}>
@@ -29,11 +30,11 @@ const CallToAction = () => {
         </div>
       </div>
       <div className={styles.call_to_action_img_wrap}>
-        <Image className={styles.call_to_action_img} 
-        src="./img/call-to-action.svg" 
+        {/* <Image className={styles.call_to_action_img} 
+        src={ImgFonFirstSection} 
         alt="call-to-action"
         width={1000}
-        height={1000}/>
+        height={1000}/> */}
       </div>
     </div>
   );
