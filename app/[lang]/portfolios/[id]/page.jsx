@@ -7,12 +7,12 @@ export const metadata = {
   description: 'Portfolio developers',
 }
 
-const PortfolioOne = async ({ params: { id } }) => {
+const PortfolioOne = async ({ params: { id, lang } }) => {
   const onePortfolio = await getOnePortfolio(id);
-  metadata.title = onePortfolio.title;
+  metadata.title = onePortfolio?.title;
   return (
       <div>
-        <OnePortfolioTemplate portfolio={onePortfolio} />
+        <OnePortfolioTemplate portfolio={onePortfolio} lang={lang}/>
       </div>
   );
 };

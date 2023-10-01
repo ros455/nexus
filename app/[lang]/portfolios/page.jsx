@@ -7,14 +7,14 @@ export const metadata = {
     description: 'Portfolio developers',
   }
   
-const PortfoliosPage = async () => {
+const PortfoliosPage = async ({params: { lang }}) => {
 
 
     const allPortfolio = await getAllPortfolio();
 
     return (
         <div className={styles.all_portfolio_wrapper}>
-            <AllPortfoliosTemplate allPortfolio={allPortfolio}/>
+            <AllPortfoliosTemplate allPortfolio={allPortfolio} lang={lang}/>
         </div>
     );
 };
