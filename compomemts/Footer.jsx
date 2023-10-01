@@ -6,7 +6,9 @@ import { BiLogoTelegram } from "react-icons/bi";
 import { SiViber } from "react-icons/si";
 import { BsWhatsapp } from "react-icons/bs";
 import { SiMaildotru } from "react-icons/si";
-const Footer = () => {
+import { getDictionary } from '@/lib/dictionary';
+const Footer = async ({lang}) => {
+  const { page } = await getDictionary(lang)
   return (
     <div className={styles.footer_wrap}>
       <div className={styles.first_block}>
@@ -17,35 +19,35 @@ const Footer = () => {
             <BsWhatsapp className={styles.work_schedule_icon}/>
           </div>
           <div className={styles.work_schedule_text_wrap}>
-            <p className={styles.work_schedule_text}>Графік роботи</p>
-            <p>Пн - Сб, з 9:00 до 21:00</p>
+            <p className={styles.work_schedule_text}>{page.Footer.Work_schedule}</p>
+            <p>{page.Footer.Schedule}</p>
           </div>
         </div>
           <nav>
             <div className={styles.footer_links_wrap}>
               <div className={styles.footer_link}>
                 <p className={styles.footer_link_round}></p>
-                <Link href='/'>Головна</Link>
+                <Link href='/'>{page.Footer.link1}</Link>
               </div>
               <div className={styles.footer_link}>
               <p className={styles.footer_link_round}></p>
-                <Link href='/'>Послуги</Link>
+                <Link href='/'>{page.Footer.link2}</Link>
               </div>
               <div className={styles.footer_link}>
               <p className={styles.footer_link_round}></p>
-                <Link href='/'>Шаблони</Link>
+                <Link href='/'>{page.Footer.link3}</Link>
               </div>
               <div className={styles.footer_link}>
               <p className={styles.footer_link_round}></p>
-                <Link href='/'>Про нас</Link>
+                <Link href='/'>{page.Footer.link4}</Link>
               </div>
               <div className={styles.footer_link}>
               <p className={styles.footer_link_round}></p>
-                <Link href='/'>Контакти</Link>
+                <Link href='/'>{page.Footer.link5}</Link>
               </div>
               <div className={styles.footer_link}>
               <p className={styles.footer_link_round}></p>
-                <Link href='/'>Політика конфіденційності</Link>
+                <Link href='/'>{page.Footer.link6}</Link>
               </div>
             </div>
           </nav>
@@ -60,7 +62,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className={styles.footer_button_wrap}>
-              <button className={styles.footer_button}>Замовити дзвінок</button>
+              <button className={styles.footer_button}>{page.Footer.back_call}</button>
             </div>
             <div className={styles.footer_contacts_post_wrap}>
                 <SiMaildotru className={styles.footer_contacts_post_icon}/>
@@ -68,7 +70,7 @@ const Footer = () => {
             </div>
         </div>
       </div>
-      <div className={styles.bottom_text}>2017-2023 Nexus Lab | Всі права захищені</div>
+      <div className={styles.bottom_text}>{page.Footer.rules}</div>
     </div>
   );
 };

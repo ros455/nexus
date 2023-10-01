@@ -7,7 +7,7 @@ import {SiViber} from 'react-icons/si';
 import {BsWhatsapp} from 'react-icons/bs';
 import {SiMaildotru} from 'react-icons/si';
 import axios from 'axios';
-const ContactForm = async ({page}) => {
+const ContactForm = ({page}) => {
     const [name, setName] = useState('');
     const [numberOrMail, setNumberOrMail] = useState('');
     const [choseMassanger, setChoseMassanger] = useState('');

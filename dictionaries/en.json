@@ -87,6 +87,18 @@
         "reviews_text7": "The task is completed, the calculator works, everything is fine.",
         "reviews_text8": "Good work in a short time, I recommend!",
         "Checked": "Checked"
+      },
+      "Footer": {
+        "Work_schedule": "Work schedule",
+        "Schedule": "Mon - Sat, from 9:00 a.m. to 9:00 p.m",
+        "link1": "Main",
+        "link2": "Services",
+        "link3": "Templates",
+        "link4": "About us",
+        "link5": "Contacts",
+        "link6": "Privacy Policy",
+        "back_call": "Order a call",
+        "rules": "2017-2023 Nexus Lab | All rights reserved"
       }
     }
   }

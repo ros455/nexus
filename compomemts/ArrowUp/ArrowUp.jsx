@@ -6,46 +6,72 @@ import styles from "../../style/arrowUp.module.scss";
 export const ArrowUp = () => {
   const [isBool, setIsBool] = useState(false);
 
+  useEffect(() => {
+    console.log('Effect work');
+    document.addEventListener('scroll', scrollHandller)
+    return () => document.removeEventListener('scroll', scrollHandller)
+  }, [])
 
   const scrollHandller = (e) => {
-    if (document.body.scrollTop > 300) {
-      setIsBool(true);
-    } else {
-      setIsBool(false);
+    console.log('function efect work');
+    if(window.scrollY > 300) {
+        setIsBool(true)
+    }
+    else{
+        setIsBool(false)
     }
   };
 
-  useEffect(() => {
-    document.body.addEventListener('scroll', scrollHandller)
-    return () => document.body.removeEventListener('scroll', scrollHandller)
-  }, [])
-
-
   const scrollTop = () => {
-    // Вимкнути скрол
-    document.body.style.overflow = 'hidden';
-  
-    const scrollToTop = () => {
-      const currentScroll = document.body.scrollTop;
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 
-      let scrolBefore = document.body.scrollTop;
+
+
+  // const scrollHandller = (e) => {
+  //   if (document.body.scrollTop > 300) {
+  //     setIsBool(true);
+  //   } else {
+  //     setIsBool(false);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   document.body.addEventListener('scroll', scrollHandller)
+  //   return () => document.body.removeEventListener('scroll', scrollHandller)
+  // }, [])
+
+  // console.log('document.body.scrollTop',document.body.scrollTop);
+
+
+  // const scrollTop = () => {
+  //   // Вимкнути скрол
+  //   document.body.style.overflow = 'hidden';
   
-      if (currentScroll > 20) {
-        window.requestAnimationFrame(scrollToTop);
-        document.body.scrollTop = currentScroll - currentScroll / 30; // Змінюйте число для більшої або меншої плавності
-      } else {
-        // Після завершення прокрутки включити скрол назад
-        document.body.style.overflow = 'auto';
-      }
+  //   const scrollToTop = () => {
+  //     const currentScroll = window.scrollY;
+
+  //     let scrolBefore = window.scrollY;
   
-      let scrolAfter = document.body.scrollTop;
-      if (scrolBefore < scrolAfter) {
-        return;
-      }
-    };
+  //     if (currentScroll > 20) {
+  //       window.requestAnimationFrame(scrollToTop);
+  //       window.scrollTo(0 ,currentScroll - currentScroll / 30); // Змінюйте число для більшої або меншої плавності
+  //     } else {
+  //       // Після завершення прокрутки включити скрол назад
+  //       document.body.style.overflow = 'auto';
+  //     }
   
-    scrollToTop();
-  };
+  //     let scrolAfter = window.scrollY;
+  //     if (scrolBefore < scrolAfter) {
+  //       return;
+  //     }
+  //   };
+  
+  //   scrollToTop();
+  // };
   
   return (
     <>
