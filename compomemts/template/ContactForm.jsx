@@ -7,8 +7,7 @@ import {SiViber} from 'react-icons/si';
 import {BsWhatsapp} from 'react-icons/bs';
 import {SiMaildotru} from 'react-icons/si';
 import axios from 'axios';
-
-const ContactForm = () => {
+const ContactForm = async ({page}) => {
     const [name, setName] = useState('');
     const [numberOrMail, setNumberOrMail] = useState('');
     const [choseMassanger, setChoseMassanger] = useState('');
@@ -47,25 +46,23 @@ const ContactForm = () => {
         })
     }
 
-    console.log('choseMassanger',choseMassanger);
     // Problem
     return (
       <div className={styles.contact_form_block}>
         <div className={styles.contact_form_main_url_wrap}>
           <p className={styles.contact_form_text}>
-            Заповніть форму і я зв'яжусь з Вами для обговорення вартості та
-            термінів створення сайту протягом 1 години
+            {page.ContactForm.title}
           </p>
         </div>
         <div className={styles.contact_form_name_input_wrap}>
-          <p className={styles.contact_form_text}>Як Вас звати?</p>
+          <p className={styles.contact_form_text}>{page.ContactForm.text1}</p>
           <input
             className={styles.contact_form_input}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className={styles.contact_form_phone_input_wrap}>
-          <p className={styles.contact_form_text}>Як з Вами зв'язатись?</p>
+          <p className={styles.contact_form_text}>{page.ContactForm.text2}</p>
           <div className={styles.contact_form_phone_input_messengers_wrap}>
             {messengersArray.map((item) => (
               <div
@@ -82,12 +79,12 @@ const ContactForm = () => {
             onChange={(e) => setNumberOrMail(e.target.value)}
           />
           <p className={styles.contact_form_phone_input_example}>
-            Номер телефону або пошта
+          {page.ContactForm.text3}
           </p>
         </div>
         <div className={styles.contact_form_button_wrap}>
           <button className={styles.contact_form_button} onClick={sendData}>
-            Обговорити проект
+          {page.ContactForm.text4}
           </button>
         </div>
       </div>

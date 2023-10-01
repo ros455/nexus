@@ -1,9 +1,13 @@
 import React from "react";
 import styles from '../style/header.module.scss';
 import Link from "next/link";
+
 import ChangeColor from "./ChangeColor/ChangeColor";
 import Image from 'next/image'
 import Logo from '../public/logo-header.svg'
+import { getDictionary } from '@/lib/dictionary'
+import LocaleSwitcher from './locale-switcher'
+
 const Header = () => {
   return (
     <header className={styles.header_wrap}>
@@ -27,6 +31,7 @@ const Header = () => {
         </ul>
       </nav>
       <ChangeColor/>
+      <LocaleSwitcher />
     </header>
   );
 };

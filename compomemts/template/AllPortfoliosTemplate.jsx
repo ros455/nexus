@@ -19,7 +19,6 @@ const AllPortfoliosTemplate = ({allPortfolio}) => {
             return;
         }
         const newArray = allPortfolio.filter((item) => item.category == category);
-        console.log('newArray',newArray);
         setAllPortfolioState(newArray);
     }
 
