@@ -105,3 +105,55 @@ a {
     color-scheme: dark;
   }
 }
+
+
+/* color theme */
+
+/* white */
+  /* yelow */
+  html[data-theme='yelow-white']{
+    --color-bg-prime: #F6F7F1;
+    --color-bg-second: #DDD;
+    --color-text-title: #393939;
+    --color-text: #393939;
+    --color-btn: #fff;
+    --color-btn-hover: #ff9d2d;
+    --color-prime: #E5C51C;
+    --color-second: #1C54E5;
+  }
+  html[data-theme='violet-white']{
+    --color-bg-prime: #F7F8FC;
+    --color-bg-second: #DDD;
+    --color-text-title: #393939;
+    --color-text: #393939;
+    --color-btn: #fff;
+    --color-btn-hover: #4e1bd9;
+    --color-prime: #6D47D7;
+    --color-second: #DDDDDD;
+  }
+
+
+
+/* dark */
+  /* pink*/
+  html[data-theme='dark_grey_pink']{
+    --color-bg-prime: #4C4C4C;
+    --color-bg-second: #E1E1E1;
+    --color-text-title: #FFFFFF;
+    --color-text: #4C4C4C;
+    --color-btn: #fff;
+    --color-btn-hover: #f4657f;
+    --color-prime: #EF395A;
+    --color-second: #2B2B2B;
+  }
+  /* pink*/
+  html[data-theme='violet-dark_gray']{
+    --color-bg-prime: #3F1FC1;
+    --color-bg-second: #FFFFFF;
+    --color-text-title: #FFFFFF;
+    --color-text: #210D73;
+    --color-btn: #fff;
+    --color-btn-hover: #3d384f;
+    --color-prime: #2A2A2A;
+    --color-second: rgba(42, 42, 42, 0.10);
+  }

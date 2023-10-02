@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "../style/callToAction.module.scss";
 import Image from 'next/image'
+import ImgFonFirstSection from '../public/img/fon-img-firsht-second2.png'
 import { getDictionary } from '@/lib/dictionary';
-// import CallToActionImage from '../public/img/bc-call-to-action.svg';
+
 const CallToAction = async ({lang}) => {
   const { page } = await getDictionary(lang)
   return (
@@ -38,7 +39,7 @@ const CallToAction = async ({lang}) => {
         width={1000}
         height={1000}/>
       </div> */}
-    </div>
+      </div>
   );
 };
 
