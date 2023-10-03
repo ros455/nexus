@@ -1,7 +1,7 @@
 // import { useLayoutEffect, useState } from "react"
 
-// // const isDarkTheme = window?.matchMedia('(prefers-color-scheme:dark)').matches
-// // const defaultTheme = isDarkTheme ? 'dark_grey_pink' : 'yelow-white'
+// const isDarkTheme = window?.matchMedia('(prefers-color-scheme:dark)').matches
+// const defaultTheme = isDarkTheme ? 'dark_grey_pink' : 'yelow-white'
 
 
 // export const useTheme = () =>{
@@ -17,21 +17,26 @@
 //     return {theme, setTheme}
 // }
 
-import { useLayoutEffect, useState } from "react"
+import { useLayoutEffect, useState } from "react";
 
 export const useTheme = () => {
-    const [theme, setTheme] = useState(null); 
+    const [theme, setTheme] = useState(null);
+
+    // Визначення значення за замовчуванням на основі налаштувань користувача
+    let defaultTheme = '';
+    if (typeof window !== 'undefined') {
+        const isDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        defaultTheme = isDarkTheme ? 'dark_grey_pink' : 'yelow-white';
+    }
 
     useLayoutEffect(() => {
-        // Зчитування теми з localStorage під час монтування компоненту
         const storedTheme = localStorage.getItem('app-them');
-        if (storedTheme) {
-            setTheme(storedTheme);
-        } else {
-            setTheme(defaultTheme || storedTheme);
+        if (!storedTheme && defaultTheme) {
             localStorage.setItem('app-them', defaultTheme);
+            setTheme(defaultTheme);
+        } else {
+            setTheme(storedTheme);
         }
-
     }, []);
 
     useLayoutEffect(() => {
