@@ -3,8 +3,17 @@
     // background-color: $color_secondary;
     background: linear-gradient(247deg, #f1f1f1 56.51%, #f4f1f2 100%);
     display: flex;
+    justify-content: center;
     padding: 0px 0px 5px 0px;
     align-items: self-end;
+}
+
+.header_box{
+    display: flex;
+    width: 100%;
+    max-width: 1300px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
