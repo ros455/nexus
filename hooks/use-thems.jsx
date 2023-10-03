@@ -28,7 +28,7 @@ export const useTheme = () => {
         if (storedTheme) {
             setTheme(storedTheme);
         } else {
-            setTheme(defaultTheme);
+            setTheme(defaultTheme || storedTheme);
             localStorage.setItem('app-them', defaultTheme);
         }
 
