@@ -1,3 +1,4 @@
+'use client'
 import { useLayoutEffect, useState } from "react"
 
 const isDarkTheme = window?.matchMedia('(prefers-color-scheme:dark)').matches
