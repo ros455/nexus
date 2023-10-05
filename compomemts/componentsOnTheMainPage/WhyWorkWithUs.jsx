@@ -1,12 +1,12 @@
 import React from 'react';
-import WhyUsBlockTemplate from './template/WhyUsBlockTemplate';
+import WhyUsBlockTemplate from '../template/WhyUsBlockTemplate';
 import {MdOutlineRocketLaunch} from 'react-icons/md';
 import { FaSmileBeam } from 'react-icons/fa';
 import { TbDeviceDesktopCode } from 'react-icons/tb';
 import { MdDashboardCustomize } from 'react-icons/md';
-import styles from '../style/whyUs.module.scss';
+import styles from '../../style/whyUs.module.scss';
 import Image from 'next/image'
-import WhyAsImage from '../public/img/sectiontwo/section2-2.png';
+import WhyAsImage from '../../public/img/sectiontwo/section2-2.png';
 import { getDictionary } from '@/lib/dictionary';
 
 const WhyWorkWithUs = async ({lang}) => {

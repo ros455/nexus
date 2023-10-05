@@ -52,7 +52,13 @@
         "title": "Fill out the form and I will contact you to discuss the cost and terms of creating the site within 1 hour",
         "text1":"What is your name?",
         "text2":"How to contact you?",
-        "text3":"Phone number or mail"
+        "text3":"Phone number or mail",
+        "text_button":"Discuss the project",
+        "telephone_text": "Enter your phone number (only Ukraine)",
+        "telegram_text": "Enter your nickname in Telegram",
+        "viber_text": "Enter the number for communication in Viber",
+        "whatsapp_text": "Enter the number for communication in Whatsapp",
+        "mail_text": "Enter your email address"
       },
       "SevenSteps": {
         "title": "Website in 7 steps",
@@ -99,6 +105,14 @@
         "link6": "Privacy Policy",
         "back_call": "Order a call",
         "rules": "2017-2023 Nexus Lab | All rights reserved"
+      },
+      "Header": {
+        "link1": "Main",
+        "link2": "Services",
+        "link3": "Templates",
+        "link4": "About us",
+        "link5": "Contacts",
+        "link6": "Calculator"
       }
     }
   }

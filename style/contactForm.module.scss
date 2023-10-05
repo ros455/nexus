@@ -37,7 +37,6 @@
         border: 1px solid $color_red_main;
         svg{
             fill: $color_red_main;
-
         }
     }
     svg{
@@ -129,7 +128,8 @@
 
 .active_icon {
     svg {
-        color: $color_red_main;
+        // color: $color_red_main;
+        fill: $color_red_main;
     }
 }
 

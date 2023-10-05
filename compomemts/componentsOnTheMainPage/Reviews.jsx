@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../style/reviews.module.scss';
-import TitleTemplate from './template/TitleTemplate';
-import ReviewBlocktemplate from './template/ReviewBlocktemplate';
+import styles from '../../style/reviews.module.scss';
+import TitleTemplate from '../template/TitleTemplate';
+import ReviewBlocktemplate from '../template/ReviewBlocktemplate';
 import { getDictionary } from '@/lib/dictionary';
 
 const Reviews = async ({lang}) => {

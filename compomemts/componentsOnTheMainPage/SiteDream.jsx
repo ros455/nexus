@@ -1,9 +1,9 @@
 import React from 'react';
-import TitleTemplate from './template/TitleTemplate';
-import ContactForm from './template/ContactForm';
-import styles from '../style/siteDream.module.scss';
+import TitleTemplate from '../template/TitleTemplate';
+import ContactForm from '../template/ContactForm';
+import styles from '../../style/siteDream.module.scss';
 import Image from 'next/image'
-import computor from '../public/img/computor.svg';
+import computor from '../../public/img/computor.svg';
 import { getDictionary } from '@/lib/dictionary';
 const SiteDream = async ({lang}) => {
     const { page } = await getDictionary(lang)

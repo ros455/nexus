@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../style/portfolio.module.scss";
-import TitleTemplate from "./template/TitleTemplate";
-import PortfolioItemTemplate from "./template/PortfolioItemTemplate";
+import styles from "../../style/portfolio.module.scss";
+import TitleTemplate from "../template/TitleTemplate";
+import PortfolioItemTemplate from "../template/PortfolioItemTemplate";
 import Link from 'next/link';
 import { getAllPortfolio } from "@/requests/portfolio";
 const Portfolios = async () => {

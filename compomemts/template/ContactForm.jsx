@@ -10,35 +10,41 @@ import axios from 'axios';
 const ContactForm = ({page}) => {
     const [name, setName] = useState('');
     const [numberOrMail, setNumberOrMail] = useState('');
-    const [choseMassanger, setChoseMassanger] = useState('');
-    const [messengersArray] = useState([
+    const [choseMassangerUrl, setChoseMassangerUrl] = useState('');
+    const [choseMassangerText, setChoseMassangerText] = useState('');
+    const messengersArray = [
         {
             icon: <BsFillTelephoneFill className={styles.messenger_icon}/>,
-            url: 'Telephone'
+            url: 'Telephone',
+            text: page.ContactForm.telephone_text
         },
         {
             icon: <BiLogoTelegram className={styles.messenger_icon}/>,
-            url: 'Telegram'
+            url: 'Telegram',
+            text: page.ContactForm.telegram_text
         },
         {
             icon: <SiViber className={styles.messenger_icon}/>,
-            url: 'Viber'
+            url: 'Viber',
+            text: page.ContactForm.viber_text
         },
         {
             icon: <BsWhatsapp className={styles.messenger_icon}/>,
-            url: 'Whatsapp'
+            url: 'Whatsapp',
+            text: page.ContactForm.whatsapp_text
         },
         {
             icon: <SiMaildotru className={styles.messenger_icon}/>,
-            url: 'Mail'
+            url: 'Mail',
+            text: page.ContactForm.mail_text
         },
-    ]);
+    ];
 
     const sendData = () => {
         axios.post(`${process.env.BASE_URL}/send-message`, {
                 name,
                 numberOrMail,
-                choseMassanger
+                choseMassanger: choseMassangerUrl
         })
         .then(() => window.location.reload())
         .catch((error) => {
@@ -46,7 +52,11 @@ const ContactForm = ({page}) => {
         })
     }
 
-    // Problem
+    const handleChoseMessenger = (item) => {
+      setChoseMassangerUrl(item.url)
+      setChoseMassangerText(item.text)
+    }
+
     return (
       <div className={styles.contact_form_block}>
         <div className={styles.contact_form_main_url_wrap}>
@@ -66,11 +76,10 @@ const ContactForm = ({page}) => {
           <div className={styles.contact_form_phone_input_messengers_wrap}>
             {messengersArray.map((item) => (
               <div
-                onClick={() => setChoseMassanger(item.url)}
-                className={item.url == choseMassanger ? styles.active_icon : ""}
+                onClick={() => handleChoseMessenger(item)}
                 key={item.url}
               > 
-              <div className={styles.contact_form_icons_wrap_one}>
+              <div className={`${styles.contact_form_icons_wrap_one} ${item.url == choseMassangerUrl ? styles.active_icon : ""}`}>
                 {item.icon}
               </div>
               </div>
@@ -81,12 +90,13 @@ const ContactForm = ({page}) => {
             onChange={(e) => setNumberOrMail(e.target.value)}
           />
           <p className={styles.contact_form_phone_input_example_phone}>
-          {page.ContactForm.text3}
+          {/* {page.ContactForm.text3} */}
+          {choseMassangerText}
           </p>
         </div>
         <div className={styles.contact_form_button_wrap}>
           <button className={styles.contact_form_button} onClick={sendData}>
-          {page.ContactForm.text4}
+          {page.ContactForm.text_button}
           </button>
         </div>
       </div>

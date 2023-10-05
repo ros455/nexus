@@ -3,8 +3,6 @@ import styles from '../../style/portfolioOne.module.scss';
 import Image from 'next/image'
 const OnePortfolioTemplate = ({portfolio, lang}) => {
 
-    console.log('lang',lang);
-
     return (
         <div className={styles.portfolio_one_wrap}>
             <div className={styles.portfolio_one_img_wrap}>

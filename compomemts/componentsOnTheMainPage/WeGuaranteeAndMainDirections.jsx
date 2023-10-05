@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../style/weGuaranteeAndMainDirections.module.scss';
-import GuaranteAndDirectionsTemplate from './template/GuaranteAndDirectionsTemplate';
-import TitleTemplate from './template/TitleTemplate';
+import styles from '../../style/weGuaranteeAndMainDirections.module.scss';
+import GuaranteAndDirectionsTemplate from '../template/GuaranteAndDirectionsTemplate';
+import TitleTemplate from '../template/TitleTemplate';
 import {AiOutlineDownSquare} from 'react-icons/ai';
 import {BiSupport} from 'react-icons/bi';
 import {BsFillDpadFill} from 'react-icons/bs';
@@ -41,7 +41,7 @@ const WeGuaranteeAndMainDirections = async ({lang}) => {
             text: page.MainDirections.icon_text3
         },
     ]
-    // Problem
+    
     return (
         <div className={styles.guarante_directions_wrap}>
             <div className={styles.guarante_wrap}>

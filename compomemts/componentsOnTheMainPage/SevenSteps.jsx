@@ -1,6 +1,6 @@
 import React from 'react';
-import TitleTemplate from './template/TitleTemplate';
-import RoundBlockTemplate from './template/RoundBlockTemplate';
+import TitleTemplate from '../template/TitleTemplate';
+import RoundBlockTemplate from '../template/RoundBlockTemplate';
 import {GoCommentDiscussion} from 'react-icons/go';
 import {AiOutlineSolution} from 'react-icons/ai';
 import { MdDashboardCustomize } from 'react-icons/md';
@@ -8,8 +8,8 @@ import { BiLogoVisualStudio } from 'react-icons/bi';
 import { AiOutlineForm } from 'react-icons/ai';
 import { SiSpeedtest } from 'react-icons/si';
 import {MdOutlineRocketLaunch} from 'react-icons/md';
-import styles from '../style/sevenSteps.module.scss';
-import style from '../style/roundBlock.module.scss';
+import styles from '../../style/sevenSteps.module.scss';
+import style from '../../style/roundBlock.module.scss';
 import { getDictionary } from '@/lib/dictionary';
 
 const SevenSteps = async ({lang}) => {

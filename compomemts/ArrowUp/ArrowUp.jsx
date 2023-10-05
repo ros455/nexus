@@ -7,13 +7,11 @@ export const ArrowUp = () => {
   const [isBool, setIsBool] = useState(false);
 
   useEffect(() => {
-    console.log('Effect work');
     document.addEventListener('scroll', scrollHandller)
     return () => document.removeEventListener('scroll', scrollHandller)
   }, [])
 
   const scrollHandller = (e) => {
-    console.log('function efect work');
     if(window.scrollY > 300) {
         setIsBool(true)
     }
