@@ -1,51 +1,38 @@
 import React from "react";
 
 const OrderForm = (state) => {
-  // console.log("siteTypes", state.siteTypes);
-  // console.log("siteDesign}", state.siteDesign);
-  // console.log("siteAdaptive", state.siteAdaptive);
-  // console.log("siteManagementSystem", state.siteManagementSystem);
-  // console.log("siteAdditionalFunctionality", state.siteAdditionalFunctionality);
-  // console.log("siteAdditionalServices", state.siteAdditionalServices);
-  // console.log("description", state.description);
-  // console.log("technicaTask", state.technicaTask);
-  // console.log("numberOfPage", state.numberOfPage);
-  // console.log("totalPriceState", state.totalPriceState);
-  // console.log("numberOfLanguage", state.numberOfLanguage);
-  // console.log("siteLnguage", state.siteLnguage);
-  // console.log("priceForLanguage", state.priceForLanguage);
   return (
     <div>
         <h4>Загальний підрахунок</h4>
-      {state.siteTypes.selected && (
+      {state.siteTypes?.selected && (
         <div>
           <p>Тип сайту:</p>
-          <p>{state.siteTypes.name}</p>
-          <p>{state.siteTypes.price}</p>
+          <p>{state.siteTypes?.name}</p>
+          <p>{state.siteTypes?.price}</p>
         </div>
       )}
-      {state.siteDesign.selected && (
+      {state.siteDesign?.selected && (
         <div>
           <p>Тип дизайну:</p>
-          <p>{state.siteDesign.name}</p>
-          <p>{state.siteDesign.price}</p>
+          <p>{state.siteDesign?.name}</p>
+          <p>{state.siteDesign?.price}</p>
         </div>
       )}
-      {state.siteAdaptive.selected && (
+      {state.siteAdaptive?.selected && (
         <div>
           <p>Тип адаптиву:</p>
-          <p>{state.siteAdaptive.name}</p>
-          <p>{state.siteAdaptive.price}</p>
+          <p>{state.siteAdaptive?.name}</p>
+          <p>{state.siteAdaptive?.price}</p>
         </div>
       )}
-      {state.siteManagementSystem.selected && (
+      {state.siteManagementSystem?.selected && (
         <div>
           <p>Система управління (адмін панель):</p>
-          <p>{state.siteManagementSystem.name}</p>
-          <p>{state.siteManagementSystem.price}</p>
+          <p>{state.siteManagementSystem?.name}</p>
+          <p>{state.siteManagementSystem?.price}</p>
         </div>
       )}
-      {state.siteLnguage.selected && (
+      {state.siteLnguage?.selected && (
         <div>
           <p>Декілька мов:</p>
           <p>{state.numberOfLanguage}</p>
@@ -83,10 +70,10 @@ const OrderForm = (state) => {
           <p>{state.numberOfPage}</p>
         </div>
       )}
-      {state.technicaTask.selected && (
+      {state.technicaTask?.selected && (
         <div>
           <p>Написання ТЗ:</p>
-          <p>{state.technicaTask.price}</p>
+          <p>{state.technicaTask?.price}</p>
         </div>
       )}
       {state.description && (
