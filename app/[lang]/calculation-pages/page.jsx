@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllCalculatePages } from '@/requests/calculation';
+// import { getAllCalculatePages } from '@/requests/calculation';
 // import AllCalculationPagesTemplate from '@/compomemts/template/AllCalculationPagesTemplate';
 
 export const metadata = {
@@ -8,7 +8,7 @@ export const metadata = {
   }
   
 const CalculationPages = async ({params: { lang }}) => {
-    const allPages = await getAllCalculatePages();
+    // const allPages = await getAllCalculatePages();
 
     return (
         <div>
