@@ -5,6 +5,7 @@ export const getAllPortfolio = () => {
 }
 export function getOnePortfolio (id) {
     return fetch(`${process.env.BASE_URL}/get-one-portfolio/${id}`, {
-        next: {revalidate: 10}
+        // next: {revalidate: 10}
+        cache: 'force-cache'
     }).then((res) => res.json())
 }

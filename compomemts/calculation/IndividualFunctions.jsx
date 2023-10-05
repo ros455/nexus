@@ -2,7 +2,7 @@ import React from 'react';
 
 const IndividualFunctions = ({description, technicaTask, setDescription, setTechnicaTask}) => {
     const changeFunc = () => {
-        setTechnicaTask({selected: !technicaTask.selected, price: technicaTask.price, name: technicaTask.name})
+        setTechnicaTask({selected: !technicaTask?.selected, price: technicaTask?.price, name: technicaTask?.name})
     }
     return (
         <div style={{border: '1px solid black'}}>
