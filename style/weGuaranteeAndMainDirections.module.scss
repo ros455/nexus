@@ -2,6 +2,12 @@
 
 .guarante_directions_wrap {
     background-color: $color_white;
+    // height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 800px;
+    margin-bottom: 100px;
 }
 
 .guarante_wrap {

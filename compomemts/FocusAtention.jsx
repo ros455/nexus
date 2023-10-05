@@ -10,6 +10,9 @@ const FocusAtention = async ({lang}) => {
 
     return (
         <div className={styles.focus_atention_wrap}>
+                        <div className={styles.focus_atention_form_wrap}>
+            <ContactForm page={page}/>
+            </div>
             <div className={styles.focus_atention_bc_image_text_wrap}>
                 <div className={styles.focus_atention_bc_image_wrap}>
                     <Image className={styles.focus_atention_bc_image} 
@@ -22,9 +25,7 @@ const FocusAtention = async ({lang}) => {
                     <p className={styles.focus_atention_text}>Сфокусуй увагу клієнта на своєму продукті, на ключові переваги та вигоди</p>
                 </div>
             </div>
-            <div className={styles.focus_atention_form_wrap}>
-            <ContactForm page={page}/>
-            </div>
+
             <div className={styles.focus_atention_main_photo_wrap}>
                 <Image className={styles.focus_atention_main_photo} 
                 src={PeopleAndComputor}
