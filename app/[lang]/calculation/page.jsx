@@ -1,9 +1,9 @@
 import React from 'react';
-import CalculationMain from '@/compomemts/calculation/CalculationMain';
+// import CalculationMain from '@/compomemts/calculation/CalculationMain';
 const CalculationPage = () => {
     return (
         <div>
-            <CalculationMain/>
+            {/* <CalculationMain/> */}
         </div>
     );
 };
