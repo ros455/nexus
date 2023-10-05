@@ -12,7 +12,7 @@ const CalculationOne = async ({ params: { id, lang } }) => {
 //   metadata.title = onePortfolio?.title;
   return (
       <div>
-        <OneCalculationPageTemplate onePage={onePage} lang={lang}/>
+        {/* <OneCalculationPageTemplate onePage={onePage} lang={lang}/> */}
       </div>
   );
 };

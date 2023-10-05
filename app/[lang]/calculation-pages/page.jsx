@@ -12,7 +12,7 @@ const CalculationPages = async ({params: { lang }}) => {
 
     return (
         <div>
-            <AllCalculationPagesTemplate allPages={allPages} lang={lang}/>
+            {/* <AllCalculationPagesTemplate allPages={allPages} lang={lang}/> */}
         </div>
     );
 };
