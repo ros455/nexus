@@ -50,9 +50,9 @@ const ContactForm = ({page}) => {
     return (
       <div className={styles.contact_form_block}>
         <div className={styles.contact_form_main_url_wrap}>
-          <p className={styles.contact_form_text}>
+          <h2 className={styles.contact_form_text_title}>
             {page.ContactForm.title}
-          </p>
+          </h2>
         </div>
         <div className={styles.contact_form_name_input_wrap}>
           <p className={styles.contact_form_text}>{page.ContactForm.text1}</p>
@@ -69,8 +69,10 @@ const ContactForm = ({page}) => {
                 onClick={() => setChoseMassanger(item.url)}
                 className={item.url == choseMassanger ? styles.active_icon : ""}
                 key={item.url}
-              >
+              > 
+              <div className={styles.contact_form_icons_wrap_one}>
                 {item.icon}
+              </div>
               </div>
             ))}
           </div>
@@ -78,7 +80,7 @@ const ContactForm = ({page}) => {
             className={styles.contact_form_input}
             onChange={(e) => setNumberOrMail(e.target.value)}
           />
-          <p className={styles.contact_form_phone_input_example}>
+          <p className={styles.contact_form_phone_input_example_phone}>
           {page.ContactForm.text3}
           </p>
         </div>

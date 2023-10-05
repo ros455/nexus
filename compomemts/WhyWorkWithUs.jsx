@@ -6,7 +6,7 @@ import { TbDeviceDesktopCode } from 'react-icons/tb';
 import { MdDashboardCustomize } from 'react-icons/md';
 import styles from '../style/whyUs.module.scss';
 import Image from 'next/image'
-import WhyAsImage from '../public/img/why-us.svg';
+import WhyAsImage from '../public/img/sectiontwo/section2-2.png';
 import { getDictionary } from '@/lib/dictionary';
 
 const WhyWorkWithUs = async ({lang}) => {

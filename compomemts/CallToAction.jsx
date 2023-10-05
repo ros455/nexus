@@ -32,13 +32,13 @@ const CallToAction = async ({lang}) => {
           </button>
         </div>
       </div>
-      {/* <div className={styles.call_to_action_img_wrap}>
+      <div className={styles.call_to_action_img_wrap}>
         <Image className={styles.call_to_action_img} 
-        src={CallToActionImage} 
+        src={ImgFonFirstSection} 
         alt="call-to-action"
         width={1000}
         height={1000}/>
-      </div> */}
+      </div>
       </div>
   );
 };

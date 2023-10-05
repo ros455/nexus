@@ -2,20 +2,33 @@
 
 .why_us_wrap {
     background-color: $color_light;
+    height: 100vh;
+    padding: 50px 0 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .why_us_title_wrap {
     display: flex;
     justify-content: center;
+    // margin-top: 70px;
 }
 
 .why_us_title {
     font-size: 34px;
     color: $color_text_black;
     max-width: 850px;
+    text-align: center;
     span {
         color: $color_red_main;
     }
+}
+
+.why_us_main_content_and_icons_wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .why_us_main_content_wrap {
@@ -25,16 +38,21 @@
 .why_us_img_wrap {
     width: 50%;
     display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
     z-index: 0;
 }
 
 .why_us_img {
-    width: 100%;
+    width: 70%;
     height: auto;
+    object-fit: contain;
 }
 
 .why_us_text_wrap {
     width: 35%;
+    max-height: 350px;
+    overflow: hidden;
     text-align: start;
     padding-top: 80px;
     font-size: 18px;

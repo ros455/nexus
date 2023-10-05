@@ -7,7 +7,7 @@
     display: flex;
     // background: linear-gradient(247deg, #f1f1f1 56.51%, #f4f1f2 100%);
     // background: url(../public/img/fon-img-firsht-second2.png) linear-gradient(247deg, #f1f1f1 56.51%, #f4f1f2 100%);
-    background-image: url(../public/img/fon-img-firsht-second2.png), linear-gradient(247deg, #f1f1f1 56.51%, #f4f1f2 100%);
+    // background-image: url(../public/img/fon-img-firsht-second2.png), linear-gradient(247deg, #f1f1f1 56.51%, #f4f1f2 100%);
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
@@ -100,10 +100,11 @@
     background-position: bottom;
     display: flex;
     justify-content: flex-end;
+    // object-fit: contain;
 }
 
 .call_to_action_img {
-    object-fit: contain;
+    object-fit: cover;
     object-position: bottom;
     height: 100%;
 }
