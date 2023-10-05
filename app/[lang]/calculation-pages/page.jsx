@@ -1,6 +1,6 @@
 import React from 'react';
 import { getAllCalculatePages } from '@/requests/calculation';
-import AllCalculationPagesTemplate from '@/compomemts/template/AllCalculationPagesTemplate';
+// import AllCalculationPagesTemplate from '@/compomemts/template/AllCalculationPagesTemplate';
 
 export const metadata = {
     title: 'Calculator website',
