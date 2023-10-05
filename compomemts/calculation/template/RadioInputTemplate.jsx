@@ -3,11 +3,6 @@ import React, {useState} from 'react';
 const RadioInputTemplate = ({boolean, state, setState, setSelectedOption, selectedOption}) => {
     const [booleanState, setBooleanState] = useState(false);
 
-    const changeFunc = () => {
-        // setState((prevState) => ({ ...prevState, selected: true }));
-        // setSelectedOption({selected: true, price: state.price, name: state.name})
-        setBooleanState(!booleanState);
-    }
     return (
         <div>
         <input

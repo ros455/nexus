@@ -12,7 +12,7 @@ const TypeSite = ({ setSelectedOption, selectedOption }) => {
         setSiteTypesLanding((prevState) => ({ ...prevState, selected: false }));
         setSiteTypesCorporate((prevState) => ({ ...prevState, selected: false }));
         setSiteTypesB2B((prevState) => ({ ...prevState, selected: false }));
-        setSelectedOption({selected: true, price: siteTypesStore.price, name: siteTypesStore.name})
+        setSelectedOption({selected: true, price: siteTypesStore?.price, name: siteTypesStore?.name})
     }
     
     const handleChangeTypesLanding = () => {
@@ -20,7 +20,7 @@ const TypeSite = ({ setSelectedOption, selectedOption }) => {
         setSiteTypesLanding((prevState) => ({ ...prevState, selected: true }));
         setSiteTypesCorporate((prevState) => ({ ...prevState, selected: false }));
         setSiteTypesB2B((prevState) => ({ ...prevState, selected: false }));
-        setSelectedOption({selected: true, price: siteTypesLanding.price, name: siteTypesLanding.name})
+        setSelectedOption({selected: true, price: siteTypesLanding?.price, name: siteTypesLanding?.name})
     }
     
     const handleChangeTypesCorporate = () => {
@@ -28,7 +28,7 @@ const TypeSite = ({ setSelectedOption, selectedOption }) => {
         setSiteTypesLanding((prevState) => ({ ...prevState, selected: false }));
         setSiteTypesCorporate((prevState) => ({ ...prevState, selected: true }));
         setSiteTypesB2B((prevState) => ({ ...prevState, selected: false }));
-        setSelectedOption({selected: true, price: siteTypesCorporate.price, name: siteTypesCorporate.name})
+        setSelectedOption({selected: true, price: siteTypesCorporate?.price, name: siteTypesCorporate?.name})
     }
     
     const handleChangeTypesB2B = () => {
@@ -36,7 +36,7 @@ const TypeSite = ({ setSelectedOption, selectedOption }) => {
         setSiteTypesLanding((prevState) => ({ ...prevState, selected: false }));
         setSiteTypesCorporate((prevState) => ({ ...prevState, selected: false }));
         setSiteTypesB2B((prevState) => ({ ...prevState, selected: true }));
-        setSelectedOption({selected: true, price: siteTypesB2B.price, name: siteTypesB2B.name})
+        setSelectedOption({selected: true, price: siteTypesB2B?.price, name: siteTypesB2B?.name})
     }
     
     return (
@@ -46,7 +46,7 @@ const TypeSite = ({ setSelectedOption, selectedOption }) => {
                 <input
                     id='type_store'
                     type='checkbox'
-                    checked={siteTypesStore.selected}
+                    checked={siteTypesStore?.selected}
                     onChange={handleChangeTypesStore}
                 />
                 <label htmlFor='type_store'>Інтернет магазин</label>
@@ -56,7 +56,7 @@ const TypeSite = ({ setSelectedOption, selectedOption }) => {
                 <input
                     id='type_landing'
                     type='checkbox'
-                    checked={siteTypesLanding.selected}
+                    checked={siteTypesLanding?.selected}
                     onChange={handleChangeTypesLanding}
                 />
                 <label htmlFor='type_landing'>Лендінг - сайт візитка</label>
@@ -65,7 +65,7 @@ const TypeSite = ({ setSelectedOption, selectedOption }) => {
                 <input
                     id='type_corporate'
                     type='checkbox'
-                    checked={siteTypesCorporate.selected}
+                    checked={siteTypesCorporate?.selected}
                     onChange={handleChangeTypesCorporate}
                 />
                 <label htmlFor='type_corporate'>Корпоративний сайт</label>
@@ -74,7 +74,7 @@ const TypeSite = ({ setSelectedOption, selectedOption }) => {
                 <input
                     id='type_b2b'
                     type='checkbox'
-                    checked={siteTypesB2B.selected}
+                    checked={siteTypesB2B?.selected}
                     onChange={handleChangeTypesB2B}
                 />
                 <label htmlFor='type_b2b'>B2B</label>

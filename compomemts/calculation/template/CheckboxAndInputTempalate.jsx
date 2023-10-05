@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 const CheckboxAndInputTempalate = ({setNumberOfLanguage, numberOfLanguage, setSiteLnguage, siteLnguage}) => {
     const handleChangeLanguage = (item) => {
-        setSiteLnguage({selected: !item.selected, price: item.price, name: item.name})
+        setSiteLnguage({selected: !item?.selected, price: item?.price, name: item?.name})
     }
   return (
     <div>

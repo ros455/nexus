@@ -45,24 +45,24 @@ const CalculationMain = () => {
                 price: siteTypes?.price
             },
             siteDesign: {
-                name: siteDesign.name,
-                price: siteDesign.price,
+                name: siteDesign?.name,
+                price: siteDesign?.price,
                 link: siteDesignLink
             },
             siteAdaptive: {
-                name: siteAdaptive.name,
-                price: siteAdaptive.price
+                name: siteAdaptive?.name,
+                price: siteAdaptive?.price
             },
             siteManagementSystem: {
-                name: siteManagementSystem.name,
-                price: siteManagementSystem.price
+                name: siteManagementSystem?.name,
+                price: siteManagementSystem?.price
             },
             siteAdditionalFunctionality: siteAdditionalFunctionality,
             siteAdditionalServices: siteAdditionalServices,
             description: description,
             technicaTask: {
-                name: technicaTask.name,
-                price: technicaTask.price
+                name: technicaTask?.name,
+                price: technicaTask?.price
             },
             numberOfPage: {
                 count: numberOfPage,
@@ -70,7 +70,7 @@ const CalculationMain = () => {
             },
             language: {
                 numberOfLanguage: numberOfLanguage,
-                price: siteLnguage.price,
+                price: siteLnguage?.price,
                 total: languagePrice
             },
             totalPrice
@@ -88,24 +88,24 @@ const CalculationMain = () => {
                 price: siteTypes?.price
             },
             siteDesign: {
-                name: siteDesign.name,
-                price: siteDesign.price,
+                name: siteDesign?.name,
+                price: siteDesign?.price,
                 link: siteDesignLink
             },
             siteAdaptive: {
-                name: siteAdaptive.name,
-                price: siteAdaptive.price
+                name: siteAdaptive?.name,
+                price: siteAdaptive?.price
             },
             siteManagementSystem: {
-                name: siteManagementSystem.name,
-                price: siteManagementSystem.price
+                name: siteManagementSystem?.name,
+                price: siteManagementSystem?.price
             },
             siteAdditionalFunctionality: siteAdditionalFunctionality,
             siteAdditionalServices: siteAdditionalServices,
             description: description,
             technicaTask: {
-                name: technicaTask.name,
-                price: technicaTask.price
+                name: technicaTask?.name,
+                price: technicaTask?.price
             },
             numberOfPage: {
                 count: numberOfPage,
@@ -113,7 +113,7 @@ const CalculationMain = () => {
             },
             language: {
                 numberOfLanguage: numberOfLanguage,
-                price: siteLnguage.price,
+                price: siteLnguage?.price,
                 total: priceForLanguage
             },
             totalPrice: totalPriceState,

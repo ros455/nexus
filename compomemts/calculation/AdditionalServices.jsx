@@ -92,8 +92,8 @@ const AdditionalServices = ({resultArray, setResultArray}) => {
                         type='checkbox'
                         onChange={() => handleAddToResoultArray(item)}
                     />
-                    <label htmlFor={item.id}>{item.name}</label>
-                    {item.name === 'Декілька мов' && <input placeholder='Кількість мов' />}
+                    <label htmlFor={item.id}>{item?.name}</label>
+                    {item?.name === 'Декілька мов' && <input placeholder='Кількість мов' />}
                 </div>
             ))}
     </div>

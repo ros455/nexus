@@ -44,7 +44,7 @@ const OrderForm = (state) => {
             <p>Додатковий функціонал</p>
             {state.siteAdditionalFunctionality.map((item) => (
                 <div key={item.name}>
-                  {item.name != 'Декілька мов' &&
+                  {item?.name != 'Декілька мов' &&
                   <>
                     <p>{item.name}</p>
                     <p>{item.price}</p>

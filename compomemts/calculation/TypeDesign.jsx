@@ -8,21 +8,21 @@ const TypeDesign = ({ setSelectedOption, selectedOption, siteDesignLink, setSite
         setSiteDesignYour((prevState) => ({ ...prevState, selected: true }));
         setSiteDesignTemplate((prevState) => ({ ...prevState, selected: false }));
         setSiteDesignIndividual((prevState) => ({ ...prevState, selected: false }));
-        setSelectedOption({selected: true, price: siteDesignYour.price, name: siteDesignYour.name})
+        setSelectedOption({selected: true, price: siteDesignYour?.price, name: siteDesignYour?.name})
     }
     
     const handleChangeDesignTemplate = () => {
         setSiteDesignYour((prevState) => ({ ...prevState, selected: false }));
         setSiteDesignTemplate((prevState) => ({ ...prevState, selected: true }));
         setSiteDesignIndividual((prevState) => ({ ...prevState, selected: false }));
-        setSelectedOption({selected: true, price: siteDesignTemplate.price, name: siteDesignTemplate.name})
+        setSelectedOption({selected: true, price: siteDesignTemplate?.price, name: siteDesignTemplate?.name})
     }
     
     const handleChangeDesignIndividual = () => {
         setSiteDesignYour((prevState) => ({ ...prevState, selected: false }));
         setSiteDesignTemplate((prevState) => ({ ...prevState, selected: false }));
         setSiteDesignIndividual((prevState) => ({ ...prevState, selected: true }));
-        setSelectedOption({selected: true, price: siteDesignIndividual.price, name: siteDesignIndividual.name})
+        setSelectedOption({selected: true, price: siteDesignIndividual?.price, name: siteDesignIndividual?.name})
     }
 
     return (
