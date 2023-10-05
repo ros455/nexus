@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, {useState, useEffect} from 'react';
+import CheckboxAndInputTempalate from './template/CheckboxAndInputTempalate';
 const dataArray = [
     {
         id: 'add_func_news',
@@ -34,11 +34,6 @@ const dataArray = [
     {
         id: 'add_func_currency',
         name: 'Декілька валют',
-        price: 500
-    },
-    {
-        id: 'add_func_language',
-        name: 'Декілька мов',
         price: 500
     },
     {
@@ -78,7 +73,8 @@ const dataArray = [
     },
 ]
 
-const AdditionalFunctionality = ({resultArray, setResultArray}) => {
+const AdditionalFunctionality = ({resultArray, setResultArray, setNumberOfLanguage, numberOfLanguage, setSiteLnguage, siteLnguage}) => {
+    const [outsideState,setOudsideState] = useState({selected: false, price: 800, name: 'Декілька мов'})
 
     const handleAddToResoultArray = (item) => {
         // Перевіряємо, чи об'єкт вже міститься в resultArray за допомогою його ідентифікатора
@@ -94,21 +90,32 @@ const AdditionalFunctionality = ({resultArray, setResultArray}) => {
         }
     };
 
+    const handleChangeLanguage = (item) => {
+        setSiteLnguage({selected: !item.selected, price: item.price, name: item.name})
+        setOudsideState({selected: !item.selected, price: item.price, name: item.name})
+    }
+
     return (
-        <div style={{ border: '1px solid black' }}>
-            <h4 style={{ fontWeight: 600, fontSize: '20px' }}>Додатковий функціонал</h4>
-            {dataArray.map((item) => (
-                <div key={item.id}>
-                    <input
-                        id={item.id}
-                        type='checkbox'
-                        onChange={() => handleAddToResoultArray(item)}
-                    />
-                    <label htmlFor={item.id}>{item.name}</label>
-                    {item.name === 'Декілька мов' && <input placeholder='Кількість мов' />}
-                </div>
-            ))}
-        </div>
+      <div style={{ border: "1px solid black" }}>
+        <h4 style={{ fontWeight: 600, fontSize: "20px" }}>
+          Додатковий функціонал
+        </h4>
+        {dataArray.map((item) => (
+          <div key={item.id}>
+            <input
+              id={item.id}
+              type="checkbox"
+              onChange={() => handleAddToResoultArray(item)}
+            />
+            <label htmlFor={item.id}>{item.name}</label>
+          </div>
+        ))}
+        <CheckboxAndInputTempalate
+        setNumberOfLanguage={setNumberOfLanguage}
+        numberOfLanguage={numberOfLanguage}
+        setSiteLnguage={setSiteLnguage}
+        siteLnguage={siteLnguage}/>
+      </div>
     );
 };
 

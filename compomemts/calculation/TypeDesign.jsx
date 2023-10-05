@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-const TypeDesign = ({ setSelectedOption, selectedOption }) => {
+const TypeDesign = ({ setSelectedOption, selectedOption, siteDesignLink, setSiteDesignLink }) => {
     const [siteDesignYour, setSiteDesignYour] = useState({selected: false, price: 0, name: 'Ваш дизайн'});
     const [siteDesignTemplate, setSiteDesignTemplate] = useState({ selected: false, price: 500, name: 'Шаблонний' });
     const [siteDesignIndividual, setSiteDesignIndividual] = useState({ selected: false, price: 800, name: 'Індивідуальний' });
@@ -34,7 +34,10 @@ const TypeDesign = ({ setSelectedOption, selectedOption }) => {
         checked={siteDesignYour.selected}
         onChange={handleChangeDesignYour}/>
         <label htmlFor='design_your'>Ваш дизайн</label>
-        <input placeholder='Посилання на ваш дизайн'/>
+        <input 
+        placeholder='Посилання на ваш дизайн'
+        onChange={(e) => setSiteDesignLink(e.target.value)}
+        value={siteDesignLink}/>
         </div>
         <div>
         <input id='design_template' 
