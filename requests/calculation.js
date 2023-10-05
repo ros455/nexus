@@ -5,6 +5,7 @@ export const getAllCalculatePages = () => {
 }
 export function getOneCalculatePage (id) {
     return fetch(`${process.env.BASE_URL}/get-one-calculate-page/${id}`, {
-        cache: 'force-cache'
+        // cache: 'force-cache'
+        next: {revalidate: 10}
     }).then((res) => res.json())
 }
