@@ -13,7 +13,7 @@ const Portfolios = async () => {
         <TitleTemplate text={"Портфоліо робіт"} />
 
         <div className={styles.portfolio_items_wrap}>
-          {allPortfolio.length && allPortfolio.map((item) => (
+          {allPortfolio && !!allPortfolio.length && allPortfolio.map((item) => (
             <PortfolioItemTemplate key={item._id} item={item} />
           ))}
         </div>

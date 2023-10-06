@@ -19,7 +19,12 @@ const CalculationOne = async ({ params: { id, lang } }) => {
 export default CalculationOne;
 
 export async function generateStaticParams() {
-  const calculations = await getAllCalculatePages();
+  try {
+    const calculations = await getAllCalculatePages();
 
-  return calculations.map((calc) => ({ id: calc._id }));
+    return calculations.map((calc) => ({ id: calc._id }));
+  } catch(error) {
+    console.error("Error in generateStaticParams:", error.message);
+    return []; // Повертаємо порожній масив у разі помилки
+  }
 }
