@@ -1,5 +1,6 @@
 'use client'
 import React, {useState, useEffect} from 'react';
+import styles from '../../style/calculation.module.scss'
 import TypeSite from './TypeSite';
 import TypeDesign from './TypeDesign';
 import NumberOfPage from './NumberOfPage';
@@ -148,68 +149,84 @@ const CalculationMain = () => {
     };
 
     return (
-        <div>
-            <TypeSite setSelectedOption={setSiteTypes} selectedOption={siteTypes}/>
-            <TypeDesign 
-            setSelectedOption={setSiteDesign} 
-            selectedOption={siteDesign}
-            siteDesignLink={siteDesignLink}
-            setSiteDesignLink={setSiteDesignLink}/>
-            <NumberOfPage number={numberOfPage} setNumber={setNumberOfPage}/>
-            <Adaptive setSelectedOption={setSiteAdaptive} selectedOption={siteAdaptive}/>
+        <div className={styles.order_calc_wrap}>
 
-            <AdditionalFunctionality setResultArray={setSiteAdditionalFunctionality} 
-            resultArray={siteAdditionalFunctionality}
-            setNumberOfLanguage={setNumberOfLanguage}
-            numberOfLanguage={numberOfLanguage}
-            setSiteLnguage={setSiteLnguage}
-            siteLnguage={siteLnguage}/>
+        <div className={styles.calculation_wrap}>
+            <div className={styles.wrap_item_one_left}>
+                <TypeSite 
+                className={styles.item_one}
+                setSelectedOption={setSiteTypes} selectedOption={siteTypes}/>
+                <TypeDesign 
+                className={styles.item_one}
+                setSelectedOption={setSiteDesign} 
+                selectedOption={siteDesign}
+                siteDesignLink={siteDesignLink}
+                setSiteDesignLink={setSiteDesignLink}/>
+                <NumberOfPage 
+                className={styles.item_one}
+                number={numberOfPage} setNumber={setNumberOfPage}/>
+                <Adaptive 
+                className={styles.item_one}
+                setSelectedOption={setSiteAdaptive} selectedOption={siteAdaptive}/>
+                <ManagementSystem setSelectedOption={setSiteManagementSystem} selectedOption={siteManagementSystem}/>
+            </div>
+            <div className={styles.wrap_item_one_right}>
+                <AdditionalFunctionality setResultArray={setSiteAdditionalFunctionality} 
+                resultArray={siteAdditionalFunctionality}
+                setNumberOfLanguage={setNumberOfLanguage}
+                numberOfLanguage={numberOfLanguage}
+                setSiteLnguage={setSiteLnguage}
+                siteLnguage={siteLnguage}/>
+                <AdditionalServices setResultArray={setSiteAdditionalServices} resultArray={siteAdditionalServices}/>
+                <IndividualFunctions 
+                    description={description} 
+                    setDescription={setDescription}
+                    technicaTask={technicaTask}
+                    setTechnicaTask={setTechnicaTask}/>
 
-            <AdditionalServices setResultArray={setSiteAdditionalServices} resultArray={siteAdditionalServices}/>
-            <ManagementSystem setSelectedOption={setSiteManagementSystem} selectedOption={siteManagementSystem}/>
+                <button
+                className={styles.order_form_button}
+                    onClick={calculateTotalPrice}>Розрахувати вартість</button>
+            </div>
 
-            <IndividualFunctions 
-            description={description} 
-            setDescription={setDescription}
-            technicaTask={technicaTask}
-            setTechnicaTask={setTechnicaTask}/>
 
-            <button
-            style={{background:'#FF6969', padding: '10px', borderRadius: '5px', fontWeight: '600'}} 
-            onClick={calculateTotalPrice}>Розрахувати вартість</button>
-            <p>Total price: {totalPriceState}</p>
+            </div>
+            <div className={styles.order_form_wrap}>
+            <h4>Total price: {totalPriceState}</h4>
             {!!totalPriceState && 
             <>
-            <button 
-            style={{background:'#3faa6b', padding: '10px', borderRadius: '5px', fontWeight: '600'}}
+            <div className={styles.order_form_total_info}>
+                <OrderForm
+                siteTypes={siteTypes}
+                siteDesign={siteDesign}
+                siteAdaptive={siteAdaptive}
+                siteManagementSystem={siteManagementSystem}
+                siteAdditionalFunctionality={siteAdditionalFunctionality}
+                siteAdditionalServices={siteAdditionalServices}
+                description={description}
+                technicaTask={technicaTask}
+                numberOfPage={numberOfPage}
+                totalPriceState={totalPriceState}
+                numberOfLanguage={numberOfLanguage}
+                siteLnguage={siteLnguage}
+                priceForLanguage={priceForLanguage}
+                />
+                <CalculateContacts
+                methodOfCommunication={methodOfCommunication}
+                setMethodOfCommunication={setMethodOfCommunication}
+                addressOfCommunication={addressOfCommunication}
+                setAddressOfCommunication={setAddressOfCommunication}
+                contactsDate={contactsDate}
+                setContactsDate={setContactsDate}
+                contactsTime={contactsTime}
+                setContactsTime={setContactsTime}/>
+                            <button 
+            className={styles.order_form_button}
             onClick={sendOrder}>Замовити сайт</button>
-
-            <OrderForm
-            siteTypes={siteTypes}
-            siteDesign={siteDesign}
-            siteAdaptive={siteAdaptive}
-            siteManagementSystem={siteManagementSystem}
-            siteAdditionalFunctionality={siteAdditionalFunctionality}
-            siteAdditionalServices={siteAdditionalServices}
-            description={description}
-            technicaTask={technicaTask}
-            numberOfPage={numberOfPage}
-            totalPriceState={totalPriceState}
-            numberOfLanguage={numberOfLanguage}
-            siteLnguage={siteLnguage}
-            priceForLanguage={priceForLanguage}
-            />
-            <CalculateContacts
-            methodOfCommunication={methodOfCommunication}
-            setMethodOfCommunication={setMethodOfCommunication}
-            addressOfCommunication={addressOfCommunication}
-            setAddressOfCommunication={setAddressOfCommunication}
-            contactsDate={contactsDate}
-            setContactsDate={setContactsDate}
-            contactsTime={contactsTime}
-            setContactsTime={setContactsTime}/>
+            </div>
             </>
             }
+            </div>
         </div>
     );
 };

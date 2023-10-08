@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import styles from '../../style/calculation.module.scss'
 
 const Adaptive = ({ setSelectedOption, selectedOption }) => {
     const [siteAdaptiveYes, setSiteAdaptiveYes] = useState({selected: false, price: 1000, name: 'Так'});
@@ -16,16 +17,16 @@ const Adaptive = ({ setSelectedOption, selectedOption }) => {
         setSelectedOption({selected: true, price: siteAdaptiveNo.price, name: siteAdaptiveNo.name})
     }
     return (
-        <div style={{border: '1px solid black'}}>
-        <h4 style={{fontWeight: 600, fontSize: '20px'}}>Адаптив під різні екрани</h4>
-        <div>
+        <div className={styles.item_one}>
+        <h4 >Адаптив під різні екрани</h4>
+        <div className={styles.input_wrap}>
         <input id='adaptive_yes' 
         type='checkbox'
         checked={siteAdaptiveYes.selected}
         onChange={handleChangeAdaptiveYes}/>
         <label htmlFor='adaptive_yes'>Так</label>
         </div>
-        <div>
+        <div className={styles.input_wrap}>
         <input id='adaptive_not' 
         type='checkbox'
         checked={siteAdaptiveNo.selected}

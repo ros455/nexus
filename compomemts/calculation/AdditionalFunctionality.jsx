@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import CheckboxAndInputTempalate from './template/CheckboxAndInputTempalate';
+import styles from '../../style/calculation.module.scss'
 const dataArray = [
     {
         id: 'add_func_news',
@@ -96,25 +97,27 @@ const AdditionalFunctionality = ({resultArray, setResultArray, setNumberOfLangua
     }
 
     return (
-      <div style={{ border: "1px solid black" }}>
-        <h4 style={{ fontWeight: 600, fontSize: "20px" }}>
+      <div className={styles.item_one}>
+        <h4 >
           Додатковий функціонал
         </h4>
-        {dataArray.map((item) => (
-          <div key={item.id}>
-            <input
-              id={item.id}
-              type="checkbox"
-              onChange={() => handleAddToResoultArray(item)}
-            />
-            <label htmlFor={item.id}>{item.name}</label>
-          </div>
-        ))}
-        <CheckboxAndInputTempalate
-        setNumberOfLanguage={setNumberOfLanguage}
-        numberOfLanguage={numberOfLanguage}
-        setSiteLnguage={setSiteLnguage}
-        siteLnguage={siteLnguage}/>
+        <div className={styles.item_additional}>
+            {dataArray.map((item) => (
+            <div key={item.id} className={styles.input_wrap}>
+                <input
+                id={item.id}
+                type="checkbox"
+                onChange={() => handleAddToResoultArray(item)}
+                />
+                <label htmlFor={item.id}>{item.name}</label>
+            </div>
+            ))}
+            <CheckboxAndInputTempalate
+            setNumberOfLanguage={setNumberOfLanguage}
+            numberOfLanguage={numberOfLanguage}
+            setSiteLnguage={setSiteLnguage}
+            siteLnguage={siteLnguage}/>
+        </div>
       </div>
     );
 };
