@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../style/callToAction.module.scss";
+import styles from "../../style/callToAction.module.scss";
 import Image from 'next/image'
-import ImgFonFirstSection from '../public/img/fon-img-firsht-second2.png'
+import ImgFonFirstSection from '../../public/img/fon-img-firsht-second2.png'
 import { getDictionary } from '@/lib/dictionary';
 
 const CallToAction = async ({lang}) => {

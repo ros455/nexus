@@ -33,11 +33,6 @@ const CalculationMain = () => {
     const [contactsDate, setContactsDate] = useState('');
     const [contactsTime, setContactsTime] = useState('');
 
-    console.log('methodOfCommunication',methodOfCommunication);
-    console.log('addressOfCommunication',addressOfCommunication);
-    console.log('contactsDate',contactsDate);
-    console.log('contactsTime',contactsTime);
-
     const createCalculatePage = async (totalPrice, priceForTotalPages, languagePrice) => {
          axios.post('http://localhost:4444/api/create-calculate-page', {
             siteTypes: {

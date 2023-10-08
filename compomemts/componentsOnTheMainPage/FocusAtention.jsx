@@ -1,9 +1,9 @@
 import React from 'react';
-import ContactForm from './template/ContactForm';
-import styles from  '../style/focusAtention.module.scss'
+import ContactForm from '../template/ContactForm';
+import styles from  '../../style/focusAtention.module.scss'
 import Image from 'next/image'
-import PeopleAndComputor from '../public/img/people-and-computor.svg';
-import backgroundImage from '../public/icon/background-item.svg';
+import PeopleAndComputor from '../../public/img/people-and-computor.svg';
+import backgroundImage from '../../public/icon/background-item.svg';
 import { getDictionary } from '@/lib/dictionary';
 const FocusAtention = async ({lang}) => {
   const { page } = await getDictionary(lang)

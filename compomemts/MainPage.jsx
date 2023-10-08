@@ -1,12 +1,12 @@
 import React from 'react';
-import CallToAction from './CallToAction';
-import WhyWorkWithUs from './WhyWorkWithUs';
-import WeGuaranteeAndMainDirections from './WeGuaranteeAndMainDirections';
-import FocusAtention from './FocusAtention';
-import SevenSteps from './SevenSteps';
-import SiteDream from './SiteDream';
-import Reviews from './Reviews';
-import Portfolios from './Portfolios';
+import CallToAction from './componentsOnTheMainPage/CallToAction';
+import WhyWorkWithUs from './componentsOnTheMainPage/WhyWorkWithUs';
+import WeGuaranteeAndMainDirections from './componentsOnTheMainPage/WeGuaranteeAndMainDirections';
+import FocusAtention from './componentsOnTheMainPage/FocusAtention';
+import SevenSteps from './componentsOnTheMainPage/SevenSteps';
+import SiteDream from './componentsOnTheMainPage/SiteDream';
+import Reviews from './componentsOnTheMainPage/Reviews';
+import Portfolios from './componentsOnTheMainPage/Portfolios';
 import VisibleArrowUp from './ArrowUp/VisibleArrowUp';
 const MainPage = ({lang}) => {
     return (

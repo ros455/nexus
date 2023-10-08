@@ -59,7 +59,7 @@ const AllPortfoliosTemplate = ({allPortfolio, lang}) => {
           </div>
         </div>
         <div className={styles.all_portfolio_content_wrap}>
-          {allPortfolioState.length &&
+          {allPortfolioState && !!allPortfolioState.length &&
             allPortfolioState.map((item, idx) => (
               <Link
                 href={`/portfolios/${item._id}`}
