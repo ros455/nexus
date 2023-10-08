@@ -1,4 +1,5 @@
 import React from "react";
+import styles from '../../style/calculation.module.scss'
 
 const dataArray = [
   {
@@ -83,10 +84,11 @@ const AdditionalServices = ({resultArray, setResultArray}) => {
     }
 };
   return (
-    <div style={{border: '1px solid black'}}>
-      <h4 style={{fontWeight: 600, fontSize: '20px'}}>Додаткові послуги</h4>
+    <div className={styles.item_one}>
+      <h4 >Додаткові послуги</h4>
+      <div className={styles.item_additional}>
       {dataArray.map((item) => (
-                <div key={item.id}>
+                <div key={item.id} className={styles.input_wrap}>
                     <input
                         id={item.id}
                         type='checkbox'
@@ -96,6 +98,8 @@ const AdditionalServices = ({resultArray, setResultArray}) => {
                     {item?.name === 'Декілька мов' && <input placeholder='Кількість мов' />}
                 </div>
             ))}
+
+      </div>
     </div>
   );
 };

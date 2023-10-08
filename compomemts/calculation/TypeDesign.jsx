@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import styles from '../../style/calculation.module.scss'
 const TypeDesign = ({ setSelectedOption, selectedOption, siteDesignLink, setSiteDesignLink }) => {
     const [siteDesignYour, setSiteDesignYour] = useState({selected: false, price: 0, name: 'Ваш дизайн'});
     const [siteDesignTemplate, setSiteDesignTemplate] = useState({ selected: false, price: 500, name: 'Шаблонний' });
@@ -26,10 +27,12 @@ const TypeDesign = ({ setSelectedOption, selectedOption, siteDesignLink, setSite
     }
 
     return (
-        <div style={{border: '1px solid black'}}>
-        <h4 style={{fontWeight: 600, fontSize: '20px'}} >Тип дизайну</h4>
-        <div>
-        <input id='design_your' 
+        <div className={styles.item_one} >
+        <h4 >Тип дизайну</h4>
+        <div className={styles.input_wrap_link}>
+        <input 
+        className={styles.input_design_your}
+        id='design_your' 
         type='checkbox'
         checked={siteDesignYour.selected}
         onChange={handleChangeDesignYour}/>
@@ -39,14 +42,14 @@ const TypeDesign = ({ setSelectedOption, selectedOption, siteDesignLink, setSite
         onChange={(e) => setSiteDesignLink(e.target.value)}
         value={siteDesignLink}/>
         </div>
-        <div>
+        <div className={styles.input_wrap}>
         <input id='design_template' 
         type='checkbox'
         checked={siteDesignTemplate.selected}
         onChange={handleChangeDesignTemplate}/>
         <label htmlFor='design_template'>Шаблонний</label>
         </div>
-        <div>
+        <div className={styles.input_wrap}>
         <input id='design_idividual' 
         type='checkbox'
         checked={siteDesignIndividual.selected}

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import styles from '../../style/calculation.module.scss'
 // import checkboxInputTemplate from './template/checkboxInputTemplate';
 const TypeSite = ({ setSelectedOption, selectedOption }) => {
 
@@ -40,9 +41,9 @@ const TypeSite = ({ setSelectedOption, selectedOption }) => {
     }
     
     return (
-        <div style={{ border: '1px solid black' }}>
-            <h4 style={{ fontWeight: 600, fontSize: '20px' }}>Оберіть тип сайту</h4>
-            <div>
+        <div className={styles.item_one}>
+            <h4 >Оберіть тип сайту</h4>
+            <div className={styles.input_wrap} >
                 <input
                     id='type_store'
                     type='checkbox'
@@ -52,7 +53,7 @@ const TypeSite = ({ setSelectedOption, selectedOption }) => {
                 <label htmlFor='type_store'>Інтернет магазин</label>
             </div>
             
-            <div>
+            <div className={styles.input_wrap}>
                 <input
                     id='type_landing'
                     type='checkbox'
@@ -61,7 +62,7 @@ const TypeSite = ({ setSelectedOption, selectedOption }) => {
                 />
                 <label htmlFor='type_landing'>Лендінг - сайт візитка</label>
             </div>
-            <div>
+            <div className={styles.input_wrap}>
                 <input
                     id='type_corporate'
                     type='checkbox'
@@ -70,7 +71,7 @@ const TypeSite = ({ setSelectedOption, selectedOption }) => {
                 />
                 <label htmlFor='type_corporate'>Корпоративний сайт</label>
             </div>
-            <div>
+            <div className={styles.input_wrap}>
                 <input
                     id='type_b2b'
                     type='checkbox'

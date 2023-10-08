@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import styles from '../../style/calculation.module.scss'
 
 const ManagementSystem = ({ setSelectedOption, selectedOption }) => {
     const [siteManagementSystemYes, setManagementSystemYes] = useState({selected: false, price: 1000, name: 'Так'});
@@ -17,16 +18,16 @@ const ManagementSystem = ({ setSelectedOption, selectedOption }) => {
     }
 
     return (
-        <div style={{border: '1px solid black'}}>
-        <h4 style={{fontWeight: 600, fontSize: '20px'}}>Система управління (адмін панель)</h4>
-        <div>
+        <div className={styles.item_one}>
+        <h4 >Система управління (адмін панель)</h4>
+        <div className={styles.input_wrap}>
         <input id='management_system_yes' 
         type='checkbox'
         checked={siteManagementSystemYes?.selected}
         onChange={handleChangeManagementSystemYes}/>
         <label htmlFor='management_system_yes'>Так</label>
         </div>
-        <div>
+        <div className={styles.input_wrap}>
         <input id='management_system_not' 
         type='checkbox'
         checked={siteManagementSystemNo?.selected}

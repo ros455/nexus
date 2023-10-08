@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
+import styles from '../../style/calculation.module.scss'
 
 const NumberOfPage = ({number, setNumber}) => {
     return (
-        <div style={{border: '1px solid black'}}>
-        <h4 style={{fontWeight: 600, fontSize: '20px'}}>Кількість сторінок</h4>
+        <div className={styles.item_one_page}>
+        <h4 >Кількість сторінок</h4>
         <input id='number_of_page' 
         type='range'
         value={number}
