@@ -11,7 +11,8 @@ const categorysEN = [
 ]
 const AllPortfoliosTemplate = ({allPortfolio, lang}) => {
     const [allPortfolioState, setAllPortfolioState] = useState([]);
-
+    const [curentCaterogiUa, setCurentCategoriUa] = useState('Всі')
+    const [curentCaterogiEn, setCurentCategoriEn] = useState('All')
     useEffect(() => {
         setAllPortfolioState(allPortfolio)
     },[])
@@ -19,21 +20,28 @@ const AllPortfoliosTemplate = ({allPortfolio, lang}) => {
     const filteredPortfolioByCategoryUa = (category) => {
         if(category == 'Всі') {
             setAllPortfolioState(allPortfolio);
+            setCurentCategoriUa(category)
             return;
         }
 
         const newArray = allPortfolio.filter((item) => item.categoryUa == category);
         setAllPortfolioState(newArray);
+        setCurentCategoriUa(category)
+
     }
     const filteredPortfolioByCategoryEn = (category) => {
         if(category == 'All') {
             setAllPortfolioState(allPortfolio);
+            setCurentCategoriEn(category)
             return;
         }
 
         const newArray = allPortfolio.filter((item) => item.categoryEn == category);
         setAllPortfolioState(newArray);
+        setCurentCategoriEn(category)
     }
+
+    console.log('url != port && ',{allPortfolioState});
 
     return (
       <>
@@ -44,14 +52,14 @@ const AllPortfoliosTemplate = ({allPortfolio, lang}) => {
           <div className={styles.all_portfolio_category_wrap}>
             {lang == 'ua' && categorysUA.map((item) => (
               <p key={item} 
-              className={styles.all_portfolio_category_item}
+              className={`${styles.all_portfolio_category_item} ${curentCaterogiUa == item && styles.all_portfolio_category_item_curent}`}
               onClick={() => filteredPortfolioByCategoryUa(item)}>
                 {item}
               </p>
             ))}
             {lang == 'en' && categorysEN.map((item) => (
               <p key={item} 
-              className={styles.all_portfolio_category_item}
+              className={`${styles.all_portfolio_category_item} ${curentCaterogiEn == item && styles.all_portfolio_category_item_curent}`}
               onClick={() => filteredPortfolioByCategoryEn(item)}>
                 {item}
               </p>
@@ -74,6 +82,10 @@ const AllPortfoliosTemplate = ({allPortfolio, lang}) => {
                   width={1000}
                   height={1000}
                 />
+                <div className={styles.all_portfolio_content_block_info}>
+                    <h4>{item.title}</h4>
+                    <p>{item.categoryEn}</p>
+                </div>
               </Link>
             ))}
         </div>

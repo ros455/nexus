@@ -1,17 +1,31 @@
 @import './template/colors.scss';
 
 .footer_wrap {
-    background: linear-gradient(90deg, #C0C0C0 56.51%, #E7E1E2 100%);
+    background: #191919;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px 0px 10px 0px;
+    color: #fff;
 }
 
 .first_block {
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-content: space-between;
+    padding: 0 10%;
+}
+
+.logo_footer{
+    width: 30%;
+    font-weight: 900;
+    font-size: 22px;
+    color: #333;
+    max-width: 150px;
+    img{
+            width: 100%;
+            height: auto;
+    }
 }
 
 .work_schedule_wrap {
@@ -52,6 +66,10 @@
     margin: 5px 0px;
     display: flex;
     align-items: center;
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
 }
 
 .footer_link_round {
@@ -76,8 +94,9 @@
 }
 
 .footer_contacts_numbers_icon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
 
 .footer_contacts_numbers_block {
@@ -91,9 +110,10 @@
 
 .footer_button {
     background-color: transparent;
-    border-bottom: 2px solid $color_danger;
+    border-bottom: 2px solid #fff;
     border-radius: 10px;
     padding: 0px 5px;
+    color: #fff;
 }
 
 .footer_contacts_number {
@@ -108,8 +128,9 @@
 }
 
 .footer_contacts_post_icon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
+    
 }
 
 .footer_contacts_post_text {
@@ -118,7 +139,12 @@
 }
 
 .bottom_text {
-    font-weight: 500;font-size: 16px;
+    font-weight: 500;
+    font-size: 10px;
+    width: 100%;
+    text-align: left;
+    margin: 10px 0px;
+    padding: 0 20px;
 }
 
 @media(max-width: 1200px) {

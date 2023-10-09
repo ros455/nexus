@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "../style/footer.module.scss";
 import Link from "next/link";
+import Logo from '../public/logo-header-white.png'
+import Image from 'next/image'
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { BiLogoTelegram } from "react-icons/bi";
 import { SiViber } from "react-icons/si";
@@ -12,41 +14,51 @@ const Footer = async ({lang}) => {
   return (
     <div className={styles.footer_wrap}>
       <div className={styles.first_block}>
-        <div className={styles.work_schedule_wrap}>
-          <div className={styles.work_schedule_icon_wrap}>
+        {/* <div className={styles.work_schedule_wrap}> */}
+          {/* <div className={styles.work_schedule_icon_wrap}>
             <BiLogoTelegram className={styles.work_schedule_icon}/>
             <SiViber className={styles.work_schedule_icon}/>
             <BsWhatsapp className={styles.work_schedule_icon}/>
-          </div>
+          </div> */}
+          <div className={styles.logo_footer}>
+          <Link href='/'>
+              <Image  
+              className={styles.header_logo}
+              src={Logo} 
+              alt="Logo"
+              width={1000}
+              height={1000}/>
+          </Link>
+        </div>
           <div className={styles.work_schedule_text_wrap}>
             <p className={styles.work_schedule_text}>{page.Footer.Work_schedule}</p>
             <p>{page.Footer.Schedule}</p>
           </div>
-        </div>
+        {/* </div> */}
           <nav>
             <div className={styles.footer_links_wrap}>
               <div className={styles.footer_link}>
-                <p className={styles.footer_link_round}></p>
+                {/* <p className={styles.footer_link_round}></p> */}
                 <Link href='/'>{page.Footer.link1}</Link>
               </div>
               <div className={styles.footer_link}>
-              <p className={styles.footer_link_round}></p>
+              {/* <p className={styles.footer_link_round}></p> */}
                 <Link href='/'>{page.Footer.link2}</Link>
               </div>
               <div className={styles.footer_link}>
-              <p className={styles.footer_link_round}></p>
+              {/* <p className={styles.footer_link_round}></p> */}
                 <Link href='/'>{page.Footer.link3}</Link>
               </div>
               <div className={styles.footer_link}>
-              <p className={styles.footer_link_round}></p>
+              {/* <p className={styles.footer_link_round}></p> */}
                 <Link href='/'>{page.Footer.link4}</Link>
               </div>
               <div className={styles.footer_link}>
-              <p className={styles.footer_link_round}></p>
+              {/* <p className={styles.footer_link_round}></p> */}
                 <Link href='/'>{page.Footer.link5}</Link>
               </div>
               <div className={styles.footer_link}>
-              <p className={styles.footer_link_round}></p>
+              {/* <p className={styles.footer_link_round}></p> */}
                 <Link href='/'>{page.Footer.link6}</Link>
               </div>
             </div>
@@ -61,9 +73,9 @@ const Footer = async ({lang}) => {
                     <p className={styles.footer_contacts_number}>+38 (000) 000 00 00</p>
                 </div>
             </div>
-            <div className={styles.footer_button_wrap}>
+            {/* <div className={styles.footer_button_wrap}>
               <button className={styles.footer_button}>{page.Footer.back_call}</button>
-            </div>
+            </div> */}
             <div className={styles.footer_contacts_post_wrap}>
                 <SiMaildotru className={styles.footer_contacts_post_icon}/>
                 <p className={styles.footer_contacts_post_text}>nexuslab2000@gmail.com</p>
