@@ -1,21 +1,7 @@
 import React, {useState} from 'react';
 import styles from '../../style/calculation.module.scss'
 
-const ManagementSystem = ({ setSelectedOption, selectedOption }) => {
-    const [siteManagementSystemYes, setManagementSystemYes] = useState({selected: false, price: 1000, name: 'Так'});
-    const [siteManagementSystemNo, setSiteManagementSystemNo] = useState({ selected: false, price: 0, name: 'Ні' });
-
-    const handleChangeManagementSystemYes = () => {
-        setManagementSystemYes((prevState) => ({ ...prevState, selected: true }));
-        setSiteManagementSystemNo((prevState) => ({ ...prevState, selected: false }));
-        setSelectedOption({selected: true, price: siteManagementSystemYes?.price, name: siteManagementSystemYes?.name})
-    }
-    
-    const handleChangeManagementSystemNo = () => {
-        setManagementSystemYes((prevState) => ({ ...prevState, selected: false }));
-        setSiteManagementSystemNo((prevState) => ({ ...prevState, selected: true }));
-        setSelectedOption({selected: true, price: siteManagementSystemNo?.price, name: siteManagementSystemNo?.name})
-    }
+const ManagementSystem = ({ siteManagementSystemYes, siteManagementSystemNo, handleChangeManagementSystemYes, handleChangeManagementSystemNo }) => {
 
     return (
         <div className={styles.item_one}>
