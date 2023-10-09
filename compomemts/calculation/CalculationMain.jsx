@@ -12,6 +12,8 @@ import IndividualFunctions from './IndividualFunctions';
 import OrderForm from './OrderForm';
 import CalculateContacts from './CalculateContacts';
 import axios from 'axios';
+import { validationCalculate } from '@/valodation/validation';
+import CalculationValidation from './CalculationValidation';
 const CalculationMain = () => {
     const [siteTypes, setSiteTypes] = useState({});
     const [siteDesign, setSiteDesign] = useState({});
@@ -34,47 +36,120 @@ const CalculationMain = () => {
     const [contactsDate, setContactsDate] = useState('');
     const [contactsTime, setContactsTime] = useState('');
 
+    //Adaptive state
+
+    const [siteAdaptiveYes, setSiteAdaptiveYes] = useState({selected: false, price: 1000, name: 'Так'});
+    const [siteAdaptiveNo, setSiteAdaptiveNo] = useState({ selected: false, price: 0, name: 'Ні' });
+
+    //Management system
+
+    const [siteManagementSystemYes, setManagementSystemYes] = useState({selected: false, price: 1000, name: 'Так'});
+    const [siteManagementSystemNo, setSiteManagementSystemNo] = useState({ selected: false, price: 0, name: 'Ні' });
+
+    //Error state
+
+    const [siteTypesError, setSiteTypesError] = useState(false);
+    const [siteDesignError, setSiteDesignError] = useState(false);
+
+    //Management func
+
+    const handleChangeManagementSystemYes = () => {
+        setManagementSystemYes((prevState) => ({ ...prevState, selected: true }));
+        setSiteManagementSystemNo((prevState) => ({ ...prevState, selected: false }));
+        setSiteManagementSystem({selected: true, price: siteManagementSystemYes?.price, name: siteManagementSystemYes?.name})
+    }
+    
+    const handleChangeManagementSystemNo = () => {
+        setManagementSystemYes((prevState) => ({ ...prevState, selected: false }));
+        setSiteManagementSystemNo((prevState) => ({ ...prevState, selected: true }));
+        setSiteManagementSystem({selected: true, price: siteManagementSystemNo?.price, name: siteManagementSystemNo?.name})
+    }
+
+
+    //Adaptive func
+
+    const handleChangeAdaptiveYes = () => {
+        setSiteAdaptiveYes((prevState) => ({ ...prevState, selected: true }));
+        setSiteAdaptiveNo((prevState) => ({ ...prevState, selected: false }));
+        setSiteAdaptive({selected: true, price: siteAdaptiveYes.price, name: siteAdaptiveYes.name})
+    }
+    
+    const handleChangeAdaptiveNo = () => {
+        setSiteAdaptiveYes((prevState) => ({ ...prevState, selected: false }));
+        setSiteAdaptiveNo((prevState) => ({ ...prevState, selected: true }));
+        setSiteAdaptive({selected: true, price: siteAdaptiveNo.price, name: siteAdaptiveNo.name})
+    }
+
+
+
+    const choseTypeStore = () => {
+        console.log('choseTypeStore');
+        handleChangeAdaptiveYes();
+        handleChangeManagementSystemYes();
+        setSiteTypesError(false);
+    }
+    const choseTypeLanding = () => {
+        console.log('choseTypeLanding');
+        handleChangeAdaptiveYes();
+        handleChangeManagementSystemNo();
+        setSiteTypesError(false);
+    }
+    const choseTypeCorporate = () => {
+        console.log('choseTypeCorporate');
+        handleChangeAdaptiveYes();
+        handleChangeManagementSystemNo();
+        setSiteTypesError(false);
+    }
+    const choseTypeB2B = () => {
+        console.log('choseTypeB2B');
+        handleChangeAdaptiveNo();
+        handleChangeManagementSystemYes();
+        setSiteTypesError(false);
+    }
+
+    
+
     const createCalculatePage = async (totalPrice, priceForTotalPages, languagePrice) => {
-         axios.post('http://localhost:4444/api/create-calculate-page', {
-            siteTypes: {
-                name: siteTypes.name,
-                price: siteTypes.price
-            },
-            siteDesign: {
-                name: siteDesign.name,
-                price: siteDesign.price,
-                link: siteDesignLink
-            },
-            siteAdaptive: {
-                name: siteAdaptive.name,
-                price: siteAdaptive.price
-            },
-            siteManagementSystem: {
-                name: siteManagementSystem.name,
-                price: siteManagementSystem.price
-            },
-            siteAdditionalFunctionality: siteAdditionalFunctionality,
-            siteAdditionalServices: siteAdditionalServices,
-            description: description,
-            technicaTask: {
-                name: technicaTask.name,
-                price: technicaTask.price
-            },
-            numberOfPage: {
-                count: numberOfPage,
-                total: priceForTotalPages
-            },
-            language: {
-                numberOfLanguage: numberOfLanguage,
-                price: siteLnguage.price,
-                total: languagePrice
-            },
-            totalPrice
-        }).then((res) => {
-            console.log('res',res.data);
-        }).catch((error) => {
-            console.log(error);
-        })
+            axios.post('http://localhost:4444/api/create-calculate-page', {
+                siteTypes: {
+                    name: siteTypes.name,
+                    price: siteTypes.price
+                },
+                siteDesign: {
+                    name: siteDesign.name,
+                    price: siteDesign.price,
+                    link: siteDesignLink
+                },
+                siteAdaptive: {
+                    name: siteAdaptive.name,
+                    price: siteAdaptive.price
+                },
+                siteManagementSystem: {
+                    name: siteManagementSystem.name,
+                    price: siteManagementSystem.price
+                },
+                siteAdditionalFunctionality: siteAdditionalFunctionality,
+                siteAdditionalServices: siteAdditionalServices,
+                description: description,
+                technicaTask: {
+                    name: technicaTask.name,
+                    price: technicaTask.price
+                },
+                numberOfPage: {
+                    count: numberOfPage,
+                    total: priceForTotalPages
+                },
+                language: {
+                    numberOfLanguage: numberOfLanguage,
+                    price: siteLnguage.price,
+                    total: languagePrice
+                },
+                totalPrice
+            }).then((res) => {
+                console.log('res',res.data);
+            }).catch((error) => {
+                console.log(error);
+            })
     }
 
     const sendOrder = () => {
@@ -129,46 +204,78 @@ const CalculationMain = () => {
     }
     
     const calculateTotalPrice = () => {
-        const totalAditionalFunctionality = siteAdditionalFunctionality.reduce((acc, item) => acc + item.price, 0);
-        const totalAditionalServices = siteAdditionalServices.reduce((acc, item) => acc + item.price, 0);
-        const priceForOnePage = 500;
-        const priceForTotalPages = numberOfPage == 1 ? 0 : numberOfPage * priceForOnePage;
-        const technicaTaskPrice = technicaTask.selected ? technicaTask.price : 0;
-        const languagePrice = numberOfLanguage > 1 && siteLnguage.selected ? siteLnguage.price *  (numberOfLanguage - 1): 0;
-        setPriceForLanguage(languagePrice);
+        const resoult = validationCalculate({
+            type: !!!siteTypes?.name,
+            design: !!!siteDesign?.name
+          });
 
-        const totalPrice = (siteTypes.price || 0) + 
-        (siteDesign.price || 0) + 
-        (siteAdaptive.price || 0) + 
-        (siteManagementSystem.price || 0) + 
-        totalAditionalFunctionality + totalAditionalServices +
-        priceForTotalPages + technicaTaskPrice + languagePrice
-        setTotalPriceState(totalPrice);
-        setTotalPriceForpages(priceForTotalPages);
-        createCalculatePage(totalPrice, priceForTotalPages, languagePrice);
+          console.log('resoult',resoult);
+
+          let isValid = false;
+      
+          if(!!!resoult.length) {
+            isValid = true;
+          } else {
+            resoult.forEach((item) => {
+                console.log('item.reason',item.reason);
+              item.reason == 'type' && setSiteTypesError(true);
+              item.reason == 'design' && setSiteDesignError(true);
+            })
+          }
+          if(isValid) {
+              const totalAditionalFunctionality = siteAdditionalFunctionality.reduce((acc, item) => acc + item.price, 0);
+              const totalAditionalServices = siteAdditionalServices.reduce((acc, item) => acc + item.price, 0);
+              const priceForOnePage = 500;
+              const priceForTotalPages = numberOfPage == 1 ? 0 : numberOfPage * priceForOnePage;
+              const technicaTaskPrice = technicaTask.selected ? technicaTask.price : 0;
+              const languagePrice = numberOfLanguage > 1 && siteLnguage.selected ? siteLnguage.price *  (numberOfLanguage - 1): 0;
+              setPriceForLanguage(languagePrice);
+      
+              const totalPrice = (siteTypes.price || 0) + 
+              (siteDesign.price || 0) + 
+              (siteAdaptive.price || 0) + 
+              (siteManagementSystem.price || 0) + 
+              totalAditionalFunctionality + totalAditionalServices +
+              priceForTotalPages + technicaTaskPrice + languagePrice
+              setTotalPriceState(totalPrice);
+              setTotalPriceForpages(priceForTotalPages);
+              createCalculatePage(totalPrice, priceForTotalPages, languagePrice);
+          }
     };
-
+    
+    console.log('siteTypesError',siteTypesError);
     return (
         <div className={styles.order_calc_wrap}>
 
         <div className={styles.calculation_wrap}>
             <div className={styles.wrap_item_one_left}>
                 <TypeSite 
-                className={styles.item_one}
-                setSelectedOption={setSiteTypes} selectedOption={siteTypes}/>
+                setSelectedOption={setSiteTypes} selectedOption={siteTypes}
+                choseTypeStore={choseTypeStore}
+                choseTypeLanding={choseTypeLanding}
+                choseTypeCorporate={choseTypeCorporate}
+                choseTypeB2B={choseTypeB2B}
+                siteTypesError={siteTypesError}
+                />
                 <TypeDesign 
-                className={styles.item_one}
                 setSelectedOption={setSiteDesign} 
                 selectedOption={siteDesign}
                 siteDesignLink={siteDesignLink}
-                setSiteDesignLink={setSiteDesignLink}/>
+                setSiteDesignLink={setSiteDesignLink}
+                setSiteDesignError={setSiteDesignError}
+                siteDesignError={siteDesignError}/>
                 <NumberOfPage 
-                className={styles.item_one}
                 number={numberOfPage} setNumber={setNumberOfPage}/>
                 <Adaptive 
-                className={styles.item_one}
-                setSelectedOption={setSiteAdaptive} selectedOption={siteAdaptive}/>
-                <ManagementSystem setSelectedOption={setSiteManagementSystem} selectedOption={siteManagementSystem}/>
+                siteAdaptiveYes={siteAdaptiveYes}
+                siteAdaptiveNo={siteAdaptiveNo}
+                handleChangeAdaptiveYes={handleChangeAdaptiveYes}
+                handleChangeAdaptiveNo={handleChangeAdaptiveNo}/>
+                <ManagementSystem 
+                siteManagementSystemYes={siteManagementSystemYes}
+                siteManagementSystemNo={siteManagementSystemNo}
+                handleChangeManagementSystemYes={handleChangeManagementSystemYes}
+                handleChangeManagementSystemNo={handleChangeManagementSystemNo}/>
             </div>
             <div className={styles.wrap_item_one_right}>
                 <AdditionalFunctionality setResultArray={setSiteAdditionalFunctionality} 
@@ -186,7 +293,12 @@ const CalculationMain = () => {
 
                 <button
                 className={styles.order_form_button}
-                    onClick={calculateTotalPrice}>Розрахувати вартість</button>
+                    onClick={calculateTotalPrice}
+                    >Розрахувати вартість
+                </button>
+                    <CalculationValidation
+                    siteTypesError={siteTypesError}
+                    siteDesignError={siteDesignError}/>
             </div>
 
 

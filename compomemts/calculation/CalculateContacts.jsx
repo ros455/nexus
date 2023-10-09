@@ -16,7 +16,7 @@ const CalculateContacts = (state) => {
                 value={state.addressOfCommunication}
                 onChange={(e) => state.setAddressOfCommunication(e.target.value)}/>
             </div>
-            <div  className={styles.item_input}>
+            {/* <div  className={styles.item_input}>
                 <p>Виберіть дату та час коли з вами звязатися</p>
                 <input type='date'
                 value={state.contactsDate}
@@ -24,7 +24,7 @@ const CalculateContacts = (state) => {
                 <input type='time'
                 value={state.contactsTime}
                 onChange={(e) => state.setContactsTime(e.target.value)}/>
-            </div>
+            </div> */}
         </div>
     );
 };
