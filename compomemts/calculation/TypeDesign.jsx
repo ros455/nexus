@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import styles from '../../style/calculation.module.scss'
+import styles from '../../style/calculation.module.scss';
+import { FaCheck } from "react-icons/fa";
 const TypeDesign = ({ setSelectedOption, setSiteDesignError, siteDesignError, siteDesignLink, setSiteDesignLink, selectedOption }) => {
     const [siteDesignYour, setSiteDesignYour] = useState({selected: false, price: 0, name: 'Ваш дизайн'});
     const [siteDesignTemplate, setSiteDesignTemplate] = useState({ selected: false, price: 500, name: 'Шаблонний' });
@@ -30,37 +31,57 @@ const TypeDesign = ({ setSelectedOption, setSiteDesignError, siteDesignError, si
     }
 
     return (
-        <div className={styles.item_one} >
-        <h4 className={`${siteDesignError && styles.error_message}`}>Тип дизайну</h4>
+      <div className={styles.item_one}>
+        <h4 className={`${siteDesignError && styles.error_message}`}>
+          Тип дизайну
+        </h4>
         <div className={styles.input_wrap_link}>
-        <input 
-        className={styles.input_design_your}
-        id='design_your' 
-        type='checkbox'
-        checked={siteDesignYour.selected}
-        onChange={handleChangeDesignYour}/>
-        <label htmlFor='design_your'>Ваш дизайн</label>
-        <input 
-        className={`${selectedOption.name == siteDesignYour.name && siteDesignLink == '' &&  styles.input_error_message}`}
-        placeholder='Посилання на ваш дизайн'
-        onChange={(e) => setSiteDesignLink(e.target.value)}
-        value={siteDesignLink}/>
+          <label
+            htmlFor="design_your"
+            className={`${styles.custom_checkbox} ${
+              siteDesignYour?.selected && styles.custom_checkbox_active
+            }`}
+            onClick={handleChangeDesignYour}
+          >
+            <FaCheck />
+          </label>
+          <p>Ваш дизайн</p>
+          <input
+            className={`${
+              selectedOption.name == siteDesignYour.name &&
+              siteDesignLink == "" &&
+              styles.input_error_message
+            }`}
+            placeholder="Посилання на ваш дизайн"
+            onChange={(e) => setSiteDesignLink(e.target.value)}
+            value={siteDesignLink}
+          />
         </div>
         <div className={styles.input_wrap}>
-        <input id='design_template' 
-        type='checkbox'
-        checked={siteDesignTemplate.selected}
-        onChange={handleChangeDesignTemplate}/>
-        <label htmlFor='design_template'>Шаблонний</label>
+          <label
+            htmlFor="design_template"
+            className={`${styles.custom_checkbox} ${
+              siteDesignTemplate?.selected && styles.custom_checkbox_active
+            }`}
+            onClick={handleChangeDesignTemplate}
+          >
+            <FaCheck />
+          </label>
+          <p>Шаблонний</p>
         </div>
         <div className={styles.input_wrap}>
-        <input id='design_idividual' 
-        type='checkbox'
-        checked={siteDesignIndividual.selected}
-        onChange={handleChangeDesignIndividual}/>
-        <label htmlFor='design_idividual'>Індивідуальний</label>
+          <label
+            htmlFor="design_idividual"
+            className={`${styles.custom_checkbox} ${
+              siteDesignIndividual?.selected && styles.custom_checkbox_active
+            }`}
+            onClick={handleChangeDesignIndividual}
+          >
+            <FaCheck />
+          </label>
+          <p>Індивідуальний</p>
         </div>
-        </div>
+      </div>
     );
 };
 

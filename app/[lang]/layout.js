@@ -4,6 +4,7 @@ import '../../style/style-null.css';
 import Header from '@/compomemts/Header';
 import Footer from '@/compomemts/Footer';
 import { Locale, i18n } from '@/i18n.config'
+import VisibleArrowUp from '@/compomemts/ArrowUp/VisibleArrowUp';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({children,params}) {
       <body className={inter.className}>
         <Header lang={params.lang}/>
         {children}
+        <VisibleArrowUp/>
         <Footer lang={params.lang}/>
         </body>
     </html>

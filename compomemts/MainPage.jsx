@@ -19,7 +19,7 @@ const MainPage = ({lang}) => {
             <SevenSteps lang={lang}/>
             <SiteDream lang={lang}/>
             <Reviews lang={lang}/>
-            <VisibleArrowUp/>
+            {/* <VisibleArrowUp/> */}
         </>
     );
 };

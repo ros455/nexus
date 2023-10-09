@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../style/allPortfolio.module.scss';
 import Link from 'next/link';
 import Image from 'next/image'
+import PortfolioItem from '../PortfolioItem';
 const categorysUA = [
     "Всі" ,"Лендінги", "Корпоративні сайти", "B2B", "Магазини", "Платформи"
 ]
@@ -87,6 +88,7 @@ const AllPortfoliosTemplate = ({allPortfolio, lang}) => {
                     <p>{item.categoryEn}</p>
                 </div>
               </Link>
+              // <PortfolioItem item={item} key={idx}/>
             ))}
         </div>
       </>

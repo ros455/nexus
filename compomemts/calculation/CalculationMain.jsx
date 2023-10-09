@@ -14,7 +14,9 @@ import CalculateContacts from './CalculateContacts';
 import axios from 'axios';
 import { validationCalculate } from '@/valodation/validation';
 import CalculationValidation from './CalculationValidation';
+import RangeSlider from './RangeSlider';
 const CalculationMain = () => {
+    const [value, setValue] = useState(25);
     const [siteTypes, setSiteTypes] = useState({});
     const [siteDesign, setSiteDesign] = useState({});
     const [siteAdaptive, setSiteAdaptive] = useState({});
@@ -245,101 +247,121 @@ const CalculationMain = () => {
     
     console.log('siteTypesError',siteTypesError);
     return (
-        <div className={styles.order_calc_wrap}>
-
+      <div className={styles.order_calc_wrap}>
         <div className={styles.calculation_wrap}>
-            <div className={styles.wrap_item_one_left}>
-                <TypeSite 
-                setSelectedOption={setSiteTypes} selectedOption={siteTypes}
-                choseTypeStore={choseTypeStore}
-                choseTypeLanding={choseTypeLanding}
-                choseTypeCorporate={choseTypeCorporate}
-                choseTypeB2B={choseTypeB2B}
-                siteTypesError={siteTypesError}
-                />
-                <TypeDesign 
-                setSelectedOption={setSiteDesign} 
-                selectedOption={siteDesign}
-                siteDesignLink={siteDesignLink}
-                setSiteDesignLink={setSiteDesignLink}
-                setSiteDesignError={setSiteDesignError}
-                siteDesignError={siteDesignError}/>
-                <NumberOfPage 
-                number={numberOfPage} setNumber={setNumberOfPage}/>
-                <Adaptive 
-                siteAdaptiveYes={siteAdaptiveYes}
-                siteAdaptiveNo={siteAdaptiveNo}
-                handleChangeAdaptiveYes={handleChangeAdaptiveYes}
-                handleChangeAdaptiveNo={handleChangeAdaptiveNo}/>
-                <ManagementSystem 
-                siteManagementSystemYes={siteManagementSystemYes}
-                siteManagementSystemNo={siteManagementSystemNo}
-                handleChangeManagementSystemYes={handleChangeManagementSystemYes}
-                handleChangeManagementSystemNo={handleChangeManagementSystemNo}/>
+          <div className={styles.wrap_item_one_left}>
+            <TypeSite
+              setSelectedOption={setSiteTypes}
+              selectedOption={siteTypes}
+              choseTypeStore={choseTypeStore}
+              choseTypeLanding={choseTypeLanding}
+              choseTypeCorporate={choseTypeCorporate}
+              choseTypeB2B={choseTypeB2B}
+              siteTypesError={siteTypesError}
+            />
+            <TypeDesign
+              setSelectedOption={setSiteDesign}
+              selectedOption={siteDesign}
+              siteDesignLink={siteDesignLink}
+              setSiteDesignLink={setSiteDesignLink}
+              setSiteDesignError={setSiteDesignError}
+              siteDesignError={siteDesignError}
+            />
+            {/* <NumberOfPage 
+                number={numberOfPage} setNumber={setNumberOfPage}/> */}
+            <div style={{width: '50%'}}>
+              <RangeSlider
+                value={numberOfPage}
+                onChange={(e) => setNumberOfPage(e.target.value)}
+              />
+              Value: {numberOfPage}
             </div>
-            <div className={styles.wrap_item_one_right}>
-                <AdditionalFunctionality setResultArray={setSiteAdditionalFunctionality} 
-                resultArray={siteAdditionalFunctionality}
-                setNumberOfLanguage={setNumberOfLanguage}
-                numberOfLanguage={numberOfLanguage}
-                setSiteLnguage={setSiteLnguage}
-                siteLnguage={siteLnguage}/>
-                <AdditionalServices setResultArray={setSiteAdditionalServices} resultArray={siteAdditionalServices}/>
-                <IndividualFunctions 
-                    description={description} 
-                    setDescription={setDescription}
-                    technicaTask={technicaTask}
-                    setTechnicaTask={setTechnicaTask}/>
+            <Adaptive
+              siteAdaptiveYes={siteAdaptiveYes}
+              siteAdaptiveNo={siteAdaptiveNo}
+              handleChangeAdaptiveYes={handleChangeAdaptiveYes}
+              handleChangeAdaptiveNo={handleChangeAdaptiveNo}
+            />
+            <ManagementSystem
+              siteManagementSystemYes={siteManagementSystemYes}
+              siteManagementSystemNo={siteManagementSystemNo}
+              handleChangeManagementSystemYes={handleChangeManagementSystemYes}
+              handleChangeManagementSystemNo={handleChangeManagementSystemNo}
+            />
+          </div>
+          <div className={styles.wrap_item_one_right}>
+            <AdditionalFunctionality
+              setResultArray={setSiteAdditionalFunctionality}
+              resultArray={siteAdditionalFunctionality}
+              setNumberOfLanguage={setNumberOfLanguage}
+              numberOfLanguage={numberOfLanguage}
+              setSiteLnguage={setSiteLnguage}
+              siteLnguage={siteLnguage}
+            />
+            <AdditionalServices
+              setResultArray={setSiteAdditionalServices}
+              resultArray={siteAdditionalServices}
+            />
+            <IndividualFunctions
+              description={description}
+              setDescription={setDescription}
+              technicaTask={technicaTask}
+              setTechnicaTask={setTechnicaTask}
+            />
 
-                <button
-                className={styles.order_form_button}
-                    onClick={calculateTotalPrice}
-                    >Розрахувати вартість
-                </button>
-                    <CalculationValidation
-                    siteTypesError={siteTypesError}
-                    siteDesignError={siteDesignError}/>
-            </div>
-
-
-            </div>
-            <div className={styles.order_form_wrap}>
-            <h4>Total price: {totalPriceState}</h4>
-            {!!totalPriceState && 
+            <button
+              className={styles.order_form_button}
+              onClick={calculateTotalPrice}
+            >
+              Розрахувати вартість
+            </button>
+            <CalculationValidation
+              siteTypesError={siteTypesError}
+              siteDesignError={siteDesignError}
+            />
+          </div>
+        </div>
+        <div className={styles.order_form_wrap}>
+          <h4>Total price: {totalPriceState}</h4>
+          {!!totalPriceState && (
             <>
-            <div className={styles.order_form_total_info}>
+              <div className={styles.order_form_total_info}>
                 <OrderForm
-                siteTypes={siteTypes}
-                siteDesign={siteDesign}
-                siteAdaptive={siteAdaptive}
-                siteManagementSystem={siteManagementSystem}
-                siteAdditionalFunctionality={siteAdditionalFunctionality}
-                siteAdditionalServices={siteAdditionalServices}
-                description={description}
-                technicaTask={technicaTask}
-                numberOfPage={numberOfPage}
-                totalPriceState={totalPriceState}
-                numberOfLanguage={numberOfLanguage}
-                siteLnguage={siteLnguage}
-                priceForLanguage={priceForLanguage}
+                  siteTypes={siteTypes}
+                  siteDesign={siteDesign}
+                  siteAdaptive={siteAdaptive}
+                  siteManagementSystem={siteManagementSystem}
+                  siteAdditionalFunctionality={siteAdditionalFunctionality}
+                  siteAdditionalServices={siteAdditionalServices}
+                  description={description}
+                  technicaTask={technicaTask}
+                  numberOfPage={numberOfPage}
+                  totalPriceState={totalPriceState}
+                  numberOfLanguage={numberOfLanguage}
+                  siteLnguage={siteLnguage}
+                  priceForLanguage={priceForLanguage}
                 />
                 <CalculateContacts
-                methodOfCommunication={methodOfCommunication}
-                setMethodOfCommunication={setMethodOfCommunication}
-                addressOfCommunication={addressOfCommunication}
-                setAddressOfCommunication={setAddressOfCommunication}
-                contactsDate={contactsDate}
-                setContactsDate={setContactsDate}
-                contactsTime={contactsTime}
-                setContactsTime={setContactsTime}/>
-                            <button 
-            className={styles.order_form_button}
-            onClick={sendOrder}>Замовити сайт</button>
-            </div>
+                  methodOfCommunication={methodOfCommunication}
+                  setMethodOfCommunication={setMethodOfCommunication}
+                  addressOfCommunication={addressOfCommunication}
+                  setAddressOfCommunication={setAddressOfCommunication}
+                  contactsDate={contactsDate}
+                  setContactsDate={setContactsDate}
+                  contactsTime={contactsTime}
+                  setContactsTime={setContactsTime}
+                />
+                <button
+                  className={styles.order_form_button}
+                  onClick={sendOrder}
+                >
+                  Замовити сайт
+                </button>
+              </div>
             </>
-            }
-            </div>
+          )}
         </div>
+      </div>
     );
 };
 
