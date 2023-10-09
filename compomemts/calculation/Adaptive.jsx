@@ -1,21 +1,8 @@
 import React, {useState} from 'react';
 import styles from '../../style/calculation.module.scss'
 
-const Adaptive = ({ setSelectedOption, selectedOption }) => {
-    const [siteAdaptiveYes, setSiteAdaptiveYes] = useState({selected: false, price: 1000, name: 'Так'});
-    const [siteAdaptiveNo, setSiteAdaptiveNo] = useState({ selected: false, price: 0, name: 'Ні' });
+const Adaptive = ({ siteAdaptiveYes, siteAdaptiveNo, handleChangeAdaptiveYes, handleChangeAdaptiveNo}) => {
 
-    const handleChangeAdaptiveYes = () => {
-        setSiteAdaptiveYes((prevState) => ({ ...prevState, selected: true }));
-        setSiteAdaptiveNo((prevState) => ({ ...prevState, selected: false }));
-        setSelectedOption({selected: true, price: siteAdaptiveYes.price, name: siteAdaptiveYes.name})
-    }
-    
-    const handleChangeAdaptiveNo = () => {
-        setSiteAdaptiveYes((prevState) => ({ ...prevState, selected: false }));
-        setSiteAdaptiveNo((prevState) => ({ ...prevState, selected: true }));
-        setSelectedOption({selected: true, price: siteAdaptiveNo.price, name: siteAdaptiveNo.name})
-    }
     return (
         <div className={styles.item_one}>
         <h4 >Адаптив під різні екрани</h4>
