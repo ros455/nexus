@@ -14,7 +14,7 @@ const MainPage = ({lang}) => {
             <CallToAction lang={lang}/>
             <WhyWorkWithUs lang={lang}/>
             <WeGuaranteeAndMainDirections lang={lang}/>
-            <Portfolios/>
+            <Portfolios lang={lang}/>
             <FocusAtention lang={lang}/>
             <SevenSteps lang={lang}/>
             <SiteDream lang={lang}/>

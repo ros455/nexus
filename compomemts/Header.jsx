@@ -33,7 +33,7 @@ const Header = async ({lang}) => {
           </ul>
         </nav>
         <ChangeColor/>
-        <LocaleSwitcher />
+        <LocaleSwitcher lang={lang}/>
       </div>
     </header>
   );
