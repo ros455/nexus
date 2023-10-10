@@ -1,9 +1,11 @@
 import React from 'react';
 import CalculationMain from '@/compomemts/calculation/CalculationMain';
-const CalculationPage = () => {
+import { getDictionary } from '@/lib/dictionary'
+const CalculationPage = async ({params: { lang }}) => {
+    const { page } = await getDictionary(lang);
     return (
         <div>
-            <CalculationMain/>
+            <CalculationMain page={page}/>
         </div>
     );
 };

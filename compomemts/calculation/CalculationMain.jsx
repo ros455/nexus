@@ -15,7 +15,7 @@ import axios from 'axios';
 import { validationCalculate } from '@/valodation/validation';
 import CalculationValidation from './CalculationValidation';
 import RangeSlider from './RangeSlider';
-const CalculationMain = () => {
+const CalculationMain = ({page}) => {
     const [value, setValue] = useState(25);
     const [siteTypes, setSiteTypes] = useState({});
     const [siteDesign, setSiteDesign] = useState({});
@@ -40,13 +40,13 @@ const CalculationMain = () => {
 
     //Adaptive state
 
-    const [siteAdaptiveYes, setSiteAdaptiveYes] = useState({selected: false, price: 1000, name: 'Так'});
-    const [siteAdaptiveNo, setSiteAdaptiveNo] = useState({ selected: false, price: 0, name: 'Ні' });
+    const [siteAdaptiveYes, setSiteAdaptiveYes] = useState({selected: false, price: 1000, name: page.Calculator.Yes});
+    const [siteAdaptiveNo, setSiteAdaptiveNo] = useState({ selected: false, price: 0, name: page.Calculator.No });
 
     //Management system
 
-    const [siteManagementSystemYes, setManagementSystemYes] = useState({selected: false, price: 1000, name: 'Так'});
-    const [siteManagementSystemNo, setSiteManagementSystemNo] = useState({ selected: false, price: 0, name: 'Ні' });
+    const [siteManagementSystemYes, setManagementSystemYes] = useState({selected: false, price: 1000, name: page.Calculator.Yes});
+    const [siteManagementSystemNo, setSiteManagementSystemNo] = useState({ selected: false, price: 0, name: page.Calculator.No  });
 
     //Error state
 
@@ -251,6 +251,7 @@ const CalculationMain = () => {
         <div className={styles.calculation_wrap}>
           <div className={styles.wrap_item_one_left}>
             <TypeSite
+              page={page}
               setSelectedOption={setSiteTypes}
               selectedOption={siteTypes}
               choseTypeStore={choseTypeStore}
@@ -260,6 +261,7 @@ const CalculationMain = () => {
               siteTypesError={siteTypesError}
             />
             <TypeDesign
+              page={page}
               setSelectedOption={setSiteDesign}
               selectedOption={siteDesign}
               siteDesignLink={siteDesignLink}
@@ -271,18 +273,20 @@ const CalculationMain = () => {
                 number={numberOfPage} setNumber={setNumberOfPage}/> */}
             <div style={{width: '50%'}}>
               <RangeSlider
+                page={page}
                 value={numberOfPage}
                 onChange={(e) => setNumberOfPage(e.target.value)}
               />
-              Value: {numberOfPage}
             </div>
             <Adaptive
+              page={page}
               siteAdaptiveYes={siteAdaptiveYes}
               siteAdaptiveNo={siteAdaptiveNo}
               handleChangeAdaptiveYes={handleChangeAdaptiveYes}
               handleChangeAdaptiveNo={handleChangeAdaptiveNo}
             />
             <ManagementSystem
+              page={page}
               siteManagementSystemYes={siteManagementSystemYes}
               siteManagementSystemNo={siteManagementSystemNo}
               handleChangeManagementSystemYes={handleChangeManagementSystemYes}
@@ -291,6 +295,7 @@ const CalculationMain = () => {
           </div>
           <div className={styles.wrap_item_one_right}>
             <AdditionalFunctionality
+              page={page}
               setResultArray={setSiteAdditionalFunctionality}
               resultArray={siteAdditionalFunctionality}
               setNumberOfLanguage={setNumberOfLanguage}
@@ -299,10 +304,12 @@ const CalculationMain = () => {
               siteLnguage={siteLnguage}
             />
             <AdditionalServices
+              page={page}
               setResultArray={setSiteAdditionalServices}
               resultArray={siteAdditionalServices}
             />
             <IndividualFunctions
+              page={page}
               description={description}
               setDescription={setDescription}
               technicaTask={technicaTask}
@@ -313,7 +320,7 @@ const CalculationMain = () => {
               className={styles.order_form_button}
               onClick={calculateTotalPrice}
             >
-              Розрахувати вартість
+              {page.Calculator.Calculate_cost}
             </button>
             <CalculationValidation
               siteTypesError={siteTypesError}
@@ -322,11 +329,12 @@ const CalculationMain = () => {
           </div>
         </div>
         <div className={styles.order_form_wrap}>
-          <h4>Total price: {totalPriceState}</h4>
+          <h4>{page.Calculator.Total_price}: {totalPriceState}</h4>
           {!!totalPriceState && (
             <>
               <div className={styles.order_form_total_info}>
                 <OrderForm
+                  page={page}
                   siteTypes={siteTypes}
                   siteDesign={siteDesign}
                   siteAdaptive={siteAdaptive}
@@ -342,6 +350,7 @@ const CalculationMain = () => {
                   priceForLanguage={priceForLanguage}
                 />
                 <CalculateContacts
+                  page={page}
                   methodOfCommunication={methodOfCommunication}
                   setMethodOfCommunication={setMethodOfCommunication}
                   addressOfCommunication={addressOfCommunication}
@@ -355,7 +364,7 @@ const CalculationMain = () => {
                   className={styles.order_form_button}
                   onClick={sendOrder}
                 >
-                  Замовити сайт
+                  {page.Calculator.Order_site}
                 </button>
               </div>
             </>

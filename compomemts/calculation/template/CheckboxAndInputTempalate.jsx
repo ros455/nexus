@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import styles from '../../../style/calculation.module.scss'
 import { FaCheck } from "react-icons/fa";
 
-const CheckboxAndInputTempalate = ({setNumberOfLanguage, numberOfLanguage, setSiteLnguage, siteLnguage}) => {
+const CheckboxAndInputTempalate = ({setNumberOfLanguage, numberOfLanguage, setSiteLnguage, siteLnguage, page}) => {
     const handleChangeLanguage = (item) => {
         setSiteLnguage({selected: !item?.selected, price: item?.price, name: item?.name})
     }
@@ -18,7 +18,7 @@ const CheckboxAndInputTempalate = ({setNumberOfLanguage, numberOfLanguage, setSi
         >
           <FaCheck />
         </label>
-        <p>Декілька мов</p>
+        <p>{page.Calculator.Several_languages}</p>
       </div >
       {siteLnguage.selected && (
         <input

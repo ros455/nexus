@@ -4,7 +4,8 @@ import { BsInfoCircle } from "react-icons/bs";
 // import checkboxInputTemplate from './template/checkboxInputTemplate';
 import { FaCheck } from "react-icons/fa";
 import CalculateInfo from "./CalculateInfo";
-const TypeSite = ({
+const TypeSite  = ({
+  page,
   setSelectedOption,
   siteTypesError,
   choseTypeStore,
@@ -16,17 +17,17 @@ const TypeSite = ({
   const [siteTypesStore, setSiteTypesStore] = useState({
     selected: false,
     price: 1000,
-    name: "Інтернет магазин",
+    name: page.Calculator.Internet_shop,
   });
   const [siteTypesLanding, setSiteTypesLanding] = useState({
     selected: false,
     price: 500,
-    name: "Лендінг - сайт візитка",
+    name: page.Calculator.Landing,
   });
   const [siteTypesCorporate, setSiteTypesCorporate] = useState({
     selected: false,
     price: 800,
-    name: "Корпоративний сайт",
+    name: page.Calculator.Corporate_site,
   });
   const [siteTypesB2B, setSiteTypesB2B] = useState({
     selected: false,
@@ -96,7 +97,7 @@ const TypeSite = ({
   return (
     <div className={styles.item_one}>
       <h4 className={`${siteTypesError && styles.error_message}`}>
-        Оберіть тип сайту
+        {page.Calculator.Type_site}
       </h4>
       <div className={styles.input_wrap}>
         <label
@@ -108,14 +109,14 @@ const TypeSite = ({
         >
           <FaCheck />
         </label>
-        <p>Інтернет магазин</p>
+        <p>{page.Calculator.Internet_shop}</p>
         <div
-          className={styles.info_wrap}
           onMouseEnter={() => setShowInfoModalStore(true)}
           onMouseLeave={() => setShowInfoModalStore(false)}
+          className={styles.info_modal_wrap}
         >
-          <BsInfoCircle className={styles.info_icon} />
           <CalculateInfo show={showInfoModalStore} />
+          <BsInfoCircle className={styles.info_icon} />
         </div>
       </div>
 
@@ -129,13 +130,14 @@ const TypeSite = ({
         >
           <FaCheck />
         </label>
-        <p>Лендінг - сайт візитка</p>
+        <p>{page.Calculator.Landing}</p>
         <div
           onMouseEnter={() => setShowInfoModalLanding(true)}
           onMouseLeave={() => setShowInfoModalLanding(false)}
+          className={styles.info_modal_wrap}
         >
-          <BsInfoCircle className={styles.info_icon} />
           <CalculateInfo show={showInfoModalLanding} />
+          <BsInfoCircle className={styles.info_icon} />
         </div>
       </div>
       <div className={styles.input_wrap}>
@@ -148,13 +150,14 @@ const TypeSite = ({
         >
           <FaCheck />
         </label>
-        <p>Корпоративний сайт</p>
+        <p>{page.Calculator.Corporate_site}</p>
         <div
           onMouseEnter={() => setShowInfoModalCorporate(true)}
           onMouseLeave={() => setShowInfoModalCorporate(false)}
+          className={styles.info_modal_wrap}
         >
-          <BsInfoCircle className={styles.info_icon} />
           <CalculateInfo show={showInfoModalCorporate} />
+          <BsInfoCircle className={styles.info_icon} />
         </div>
       </div>
       <div className={styles.input_wrap}>
@@ -171,9 +174,10 @@ const TypeSite = ({
         <div
           onMouseEnter={() => setShowInfoModalB2B(true)}
           onMouseLeave={() => setShowInfoModalB2B(false)}
+          className={styles.info_modal_wrap}
         >
-          <BsInfoCircle className={styles.info_icon} />
           <CalculateInfo show={showInfoModalB2B} />
+          <BsInfoCircle className={styles.info_icon} />
         </div>
       </div>
     </div>

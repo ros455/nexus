@@ -3,6 +3,7 @@ import styles from "../../style/calculation.module.scss";
 import { FaCheck } from "react-icons/fa";
 
 const ManagementSystem = ({
+  page,
   siteManagementSystemYes,
   siteManagementSystemNo,
   handleChangeManagementSystemYes,
@@ -10,7 +11,7 @@ const ManagementSystem = ({
 }) => {
   return (
     <div className={styles.item_one}>
-      <h4>Система управління (адмін панель)</h4>
+      <h4>{page.Calculator.Management_system}</h4>
       <div className={styles.input_wrap}>
         <label
           htmlFor="management_system_yes"
@@ -21,7 +22,7 @@ const ManagementSystem = ({
         >
           <FaCheck />
         </label>
-        <p>Так</p>
+        <p>{page.Calculator.Yes}</p>
       </div>
       <div className={styles.input_wrap}>
         <label
@@ -33,7 +34,7 @@ const ManagementSystem = ({
         >
           <FaCheck />
         </label>
-        <p>Ні</p>
+        <p>{page.Calculator.No}</p>
       </div>
     </div>
   );

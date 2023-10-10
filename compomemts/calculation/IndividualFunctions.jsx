@@ -3,6 +3,7 @@ import styles from "../../style/calculation.module.scss";
 import { FaCheck } from "react-icons/fa";
 
 const IndividualFunctions = ({
+  page,
   description,
   technicaTask,
   setDescription,
@@ -17,7 +18,7 @@ const IndividualFunctions = ({
   };
   return (
     <div className={styles.order_form_individual_funk}>
-      <h4>Індивідуальні функції</h4>
+      <h4>{page.Calculator.Individual_functions}</h4>
       <div className={styles.order_form_tz_chekbox}>
         <label
           htmlFor="individual_func_technical_task"
@@ -28,9 +29,9 @@ const IndividualFunctions = ({
         >
           <FaCheck />
         </label>
-        <p>Написання ТЗ</p>
+        <p>{page.Calculator.Writing_Technical_Task}</p>
       </div>
-      <h4 style={{ marginTop: "20px" }}>Чи є у Вас що додати?</h4>
+      <h4 style={{ marginTop: "20px" }}>{page.Calculator.Anything_add}?</h4>
       <textarea
         value={description}
         onChange={(e) => setDescription(e.target.value)}

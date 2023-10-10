@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import styles from '../../style/calculation.module.scss';
 import { FaCheck } from "react-icons/fa";
-const TypeDesign = ({ setSelectedOption, setSiteDesignError, siteDesignError, siteDesignLink, setSiteDesignLink, selectedOption }) => {
-    const [siteDesignYour, setSiteDesignYour] = useState({selected: false, price: 0, name: 'Ваш дизайн'});
-    const [siteDesignTemplate, setSiteDesignTemplate] = useState({ selected: false, price: 500, name: 'Шаблонний' });
-    const [siteDesignIndividual, setSiteDesignIndividual] = useState({ selected: false, price: 800, name: 'Індивідуальний' });
+const TypeDesign = ({ setSelectedOption, setSiteDesignError, siteDesignError, siteDesignLink, setSiteDesignLink, selectedOption, page }) => {
+    const [siteDesignYour, setSiteDesignYour] = useState({selected: false, price: 0, name: page.Calculator.Your_design});
+    const [siteDesignTemplate, setSiteDesignTemplate] = useState({ selected: false, price: 500, name: page.Calculator.Stereotyped });
+    const [siteDesignIndividual, setSiteDesignIndividual] = useState({ selected: false, price: 800, name: page.Calculator.Individual });
 
     const handleChangeDesignYour = () => {
         setSiteDesignYour((prevState) => ({ ...prevState, selected: true }));
@@ -33,7 +33,7 @@ const TypeDesign = ({ setSelectedOption, setSiteDesignError, siteDesignError, si
     return (
       <div className={styles.item_one}>
         <h4 className={`${siteDesignError && styles.error_message}`}>
-          Тип дизайну
+          {page.Calculator.Chose_Type_design}
         </h4>
         <div className={styles.input_wrap_link}>
           <label
@@ -45,14 +45,14 @@ const TypeDesign = ({ setSelectedOption, setSiteDesignError, siteDesignError, si
           >
             <FaCheck />
           </label>
-          <p>Ваш дизайн</p>
+          <p>{page.Calculator.Your_design}</p>
           <input
             className={`${
               selectedOption.name == siteDesignYour.name &&
               siteDesignLink == "" &&
               styles.input_error_message
             }`}
-            placeholder="Посилання на ваш дизайн"
+            placeholder={page.Calculator.Your_design_placeholder}
             onChange={(e) => setSiteDesignLink(e.target.value)}
             value={siteDesignLink}
           />
@@ -67,7 +67,7 @@ const TypeDesign = ({ setSelectedOption, setSiteDesignError, siteDesignError, si
           >
             <FaCheck />
           </label>
-          <p>Шаблонний</p>
+          <p>{page.Calculator.Stereotyped}</p>
         </div>
         <div className={styles.input_wrap}>
           <label
@@ -79,7 +79,7 @@ const TypeDesign = ({ setSelectedOption, setSiteDesignError, siteDesignError, si
           >
             <FaCheck />
           </label>
-          <p>Індивідуальний</p>
+          <p>{page.Calculator.Individual}</p>
         </div>
       </div>
     );

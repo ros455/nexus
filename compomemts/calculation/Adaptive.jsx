@@ -3,6 +3,7 @@ import styles from "../../style/calculation.module.scss";
 import { FaCheck } from "react-icons/fa";
 
 const Adaptive = ({
+  page,
   siteAdaptiveYes,
   siteAdaptiveNo,
   handleChangeAdaptiveYes,
@@ -10,7 +11,7 @@ const Adaptive = ({
 }) => {
   return (
     <div className={styles.item_one}>
-      <h4>Адаптив під різні екрани</h4>
+      <h4>{page.Calculator.Adaptive}</h4>
       <div className={styles.input_wrap}>
         <label
           htmlFor="adaptive_yes"
@@ -21,7 +22,7 @@ const Adaptive = ({
         >
           <FaCheck />
         </label>
-        <p>Так</p>
+        <p>{page.Calculator.Yes}</p>
       </div>
       <div className={styles.input_wrap}>
         <label
@@ -33,7 +34,7 @@ const Adaptive = ({
         >
           <FaCheck />
         </label>
-        <p>Ні</p>
+        <p>{page.Calculator.No}</p>
       </div>
     </div>
   );

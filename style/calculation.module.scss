@@ -136,7 +136,8 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-
+    font-size: 18px;
+    font-weight: 600;
 }
 
 
@@ -177,6 +178,7 @@
     display: flex;
     gap: 10px;
     width: 100%;
+    font-size: 16px;
 }
 
 .h4_total{
@@ -208,12 +210,16 @@
 }
 
 .info_icon {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
 }
 
 .info_wrap {
     // position: absolute;
+}
+
+.info_text {
+
 }
 
 .error_message {
@@ -225,4 +231,12 @@
     &::placeholder {
         color: $color_red_main;
     }
+}
+
+.info_modal_wrap {
+    display: flex;
+    flex-direction: column;
+}
+.info_modal_block {
+    
 }

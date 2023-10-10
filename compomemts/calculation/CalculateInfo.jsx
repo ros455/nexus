@@ -3,7 +3,7 @@ import {BsInfoCircle} from 'react-icons/bs';
 import styles from '../../style/calculateInfo.module.scss';
 const CalculateInfo = ({show}) => {
     return (
-        <div>
+        <div className={styles.info_modal_block}>
             {show && 
             <div className={styles.info_wrap}>
                 <p className={styles.info_text}>Text</p>

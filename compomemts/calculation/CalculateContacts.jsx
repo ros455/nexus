@@ -4,14 +4,14 @@ import styles from '../../style/calculation.module.scss'
 const CalculateContacts = (state) => {
     return (
         <div style={{marginTop:'20px'}} className={`${styles.item_one} ${styles.item_one_form}`}>
-                <h4 style={{color:'red', textAlign:'center' }}> Вкажіть спосіб звязку</h4>
+                <h4 style={{color:'red', textAlign:'center' }}>{state.page.Calculator.Method_of_communication}</h4>
             <div className={styles.item_input}>
                 <input 
                 value={state.methodOfCommunication}
                 onChange={(e) => state.setMethodOfCommunication(e.target.value)}/>
             </div>
             <div  className={styles.item_input}>
-                <p>Вкажіть номер телефона або адресс електроної пошти</p>
+                <p>{state.page.Calculator.Enter_address}</p>
                 <input
                 value={state.addressOfCommunication}
                 onChange={(e) => state.setAddressOfCommunication(e.target.value)}/>
