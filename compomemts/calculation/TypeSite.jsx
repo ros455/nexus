@@ -91,9 +91,6 @@ const TypeSite  = ({
     choseTypeB2B();
   };
 
-  console.log("selectedOption", selectedOption);
-  console.log("siteTypesStore", siteTypesStore);
-
   return (
     <div className={styles.item_one}>
       <h4 className={`${siteTypesError && styles.error_message}`}>

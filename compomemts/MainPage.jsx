@@ -7,19 +7,19 @@ import SevenSteps from './componentsOnTheMainPage/SevenSteps';
 import SiteDream from './componentsOnTheMainPage/SiteDream';
 import Reviews from './componentsOnTheMainPage/Reviews';
 import Portfolios from './componentsOnTheMainPage/Portfolios';
-import VisibleArrowUp from './ArrowUp/VisibleArrowUp';
-const MainPage = ({lang}) => {
+import { getDictionary } from '@/lib/dictionary';
+const MainPage = async ({lang}) => {
+    const { page } = await getDictionary(lang)
     return (
         <>
             <CallToAction lang={lang}/>
-            <WhyWorkWithUs lang={lang}/>
+            <WhyWorkWithUs page={page}/>
             <WeGuaranteeAndMainDirections lang={lang}/>
             <Portfolios lang={lang}/>
             <FocusAtention lang={lang}/>
             <SevenSteps lang={lang}/>
-            <SiteDream lang={lang}/>
             <Reviews lang={lang}/>
-            {/* <VisibleArrowUp/> */}
+            <SiteDream lang={lang}/>
         </>
     );
 };

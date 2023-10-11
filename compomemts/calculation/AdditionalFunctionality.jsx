@@ -103,7 +103,7 @@ const AdditionalFunctionality = ({
       <h4>{page.Calculator.Additional_functionality}</h4>
       <div className={styles.item_additional}>
         {dataArray.map((item) => (
-          <div key={item.id} className={styles.input_wrap}>
+          <div key={item.id} className={`${styles.input_wrap} ${styles.outside_scroll_item}`}>
             <label
               htmlFor={item.id}
               className={`${styles.custom_checkbox} ${

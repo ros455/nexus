@@ -42,8 +42,6 @@ const AllPortfoliosTemplate = ({allPortfolio, lang}) => {
         setCurentCategoriEn(category)
     }
 
-    console.log('url != port && ',{allPortfolioState});
-
     return (
       <>
         <div className={styles.all_portfolio_header}>

@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import WhyUsBlockTemplate from '../template/WhyUsBlockTemplate';
 import {MdOutlineRocketLaunch} from 'react-icons/md';
@@ -7,30 +8,33 @@ import { MdDashboardCustomize } from 'react-icons/md';
 import styles from '../../style/whyUs.module.scss';
 import Image from 'next/image'
 import WhyAsImage from '../../public/img/sectiontwo/section2-2.png';
-import { getDictionary } from '@/lib/dictionary';
+// import { getDictionary } from '@/lib/dictionary';
 
-const WhyWorkWithUs = async ({lang}) => {
-    const { page } = await getDictionary(lang)
+const WhyWorkWithUs = ({page}) => {
 
     const dataArray = [
         {
             icon: <MdOutlineRocketLaunch className={styles.why_us_icon}/>,
-            number: '5+',
+            number: 5,
+            time: 250,
             text: page.WhyWorkWithUs.text_icon1
         },
         {
             icon: <MdDashboardCustomize className={styles.why_us_icon}/>,
-            number: '47+',
+            number: 47,
+            time: 40,
             text: page.WhyWorkWithUs.text_icon2
         },
         {
             icon: <TbDeviceDesktopCode className={styles.why_us_icon}/>,
-            number: '70+',
+            number: 70,
+            time: 25,
             text: page.WhyWorkWithUs.text_icon3
         },
         {
             icon: <FaSmileBeam className={styles.why_us_icon}/>,
-            number: '90+',
+            number: 90,
+            time: 20,
             text: page.WhyWorkWithUs.text_icon4
         },
     ];

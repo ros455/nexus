@@ -85,25 +85,21 @@ const CalculationMain = ({page}) => {
 
 
     const choseTypeStore = () => {
-        console.log('choseTypeStore');
         handleChangeAdaptiveYes();
         handleChangeManagementSystemYes();
         setSiteTypesError(false);
     }
     const choseTypeLanding = () => {
-        console.log('choseTypeLanding');
         handleChangeAdaptiveYes();
         handleChangeManagementSystemNo();
         setSiteTypesError(false);
     }
     const choseTypeCorporate = () => {
-        console.log('choseTypeCorporate');
         handleChangeAdaptiveYes();
         handleChangeManagementSystemNo();
         setSiteTypesError(false);
     }
     const choseTypeB2B = () => {
-        console.log('choseTypeB2B');
         handleChangeAdaptiveNo();
         handleChangeManagementSystemYes();
         setSiteTypesError(false);
@@ -148,7 +144,7 @@ const CalculationMain = ({page}) => {
                 },
                 totalPrice
             }).then((res) => {
-                console.log('res',res.data);
+
             }).catch((error) => {
                 console.log(error);
             })
@@ -197,8 +193,6 @@ const CalculationMain = ({page}) => {
                 time: contactsTime
             }
         }).then((res) => {
-            alert('order send');
-            console.log('res',res.data);
             window.location.reload();
         }).catch((error) => {
             console.log(error);
@@ -211,7 +205,6 @@ const CalculationMain = ({page}) => {
             design: !!!siteDesign?.name
           });
 
-          console.log('resoult',resoult);
 
           let isValid = false;
       
@@ -219,7 +212,6 @@ const CalculationMain = ({page}) => {
             isValid = true;
           } else {
             resoult.forEach((item) => {
-                console.log('item.reason',item.reason);
               item.reason == 'type' && setSiteTypesError(true);
               item.reason == 'design' && setSiteDesignError(true);
             })
@@ -245,7 +237,6 @@ const CalculationMain = ({page}) => {
           }
     };
     
-    console.log('siteTypesError',siteTypesError);
     return (
       <div className={styles.order_calc_wrap}>
         <div className={styles.calculation_wrap}>
