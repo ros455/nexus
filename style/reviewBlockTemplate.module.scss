@@ -74,6 +74,16 @@
     line-height: 20px;
 }
 
+.star {
+    color: #ffd700; // Жовтий колір
+    font-size: 20px;
+    margin-right: 4px; // Додаємо невеличкий відступ між зірочками
+
+    &:last-child {
+        margin-right: 0; // Прибираємо відступ для останньої зірочки
+    }
+}
+
 @media(max-width: 900px) {
     .review_wrap {
         width: 90%;

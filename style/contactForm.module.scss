@@ -123,12 +123,12 @@
     font-weight: 700;
 }
 
-.active_icon {
-    svg {
-        // color: $color_red_main;
-        fill: $color_red_main;
-    }
-}
+// .active_icon {
+//     svg {
+//         // color: $color_red_main;
+//         fill: $color_red_main;
+//     }
+// }
 
 @media(max-width: 1100px) {
     .focus_atention_text {
@@ -240,4 +240,39 @@
   .wrapper .mail:hover .tooltip::before {
     background: #CD201F;
     color: #ffffff;
+  }
+
+  .active_phone {
+    background: #131313 !important;
+    svg {
+      color: white;
+  }
+  }
+
+  .active_telegram {
+    background: #1DA1F2 !important;
+    svg {
+      color: white;
+  }
+  }
+
+  .active_viber {
+    background: #59267c !important;
+    svg {
+      color: white;
+  }
+  }
+
+  .active_whatsapp {
+    background: #047741 !important;
+    svg {
+      color: white;
+  }
+  }
+
+  .active_mail {
+    background: #CD201F !important;
+    svg {
+      color: white;
+  }
   }

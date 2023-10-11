@@ -15,7 +15,7 @@ const Portfolios = async ({lang}) => {
         <TitleTemplate text={"Портфоліо робіт"} />
 
         <div className={styles.portfolio_items_wrap}>
-          {allPortfolio && !!allPortfolio.length && allPortfolio.map((item) => (
+          {allPortfolio && !!allPortfolio.length && allPortfolio.slice(0,9).map((item) => (
             <PortfolioItemTemplate key={item._id} item={item} />
           ))}
         </div>

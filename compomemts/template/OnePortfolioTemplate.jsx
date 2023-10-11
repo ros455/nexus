@@ -1,17 +1,21 @@
 import React from 'react';
 import styles from '../../style/portfolioOne.module.scss';
 import Image from 'next/image'
+import PhotoSlider from './PhotoSlider';
 const OnePortfolioTemplate = ({portfolio, lang}) => {
 
     return (
         <div className={styles.portfolio_one_wrap}>
-            <div className={styles.portfolio_one_img_wrap}>
+            <PhotoSlider 
+            mainImage={`/projects/${portfolio?.mainImage}`}
+            portfolio={portfolio}/>
+            {/* <div className={styles.portfolio_one_img_wrap}>
                 <Image className={styles.portfolio_one_img} 
                 src={`/projects/${portfolio?.mainImage}`}
                 alt={portfolio?.mainImage}
                 width={1000}
                 height={1000}/>
-            </div>
+            </div> */}
             <div className={styles.portfolio_one_content_wrap}>
                 <div className={styles.portfolio_one_content_block}>
                     <div className={styles.portfolio_one_content_title_wrap}>
