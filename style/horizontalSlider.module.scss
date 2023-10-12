@@ -402,3 +402,83 @@ $scroll-end: calc(-50% - $gap);
     }
   }
 }
+.figma_block {
+  svg {
+    fill: 
+    #a800f7;
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: #a800f7;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+.vs_code_block {
+  svg {
+    fill: 
+    #2285c5;
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: #2285c5;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+.mongo_block {
+  svg {
+    fill: 
+    #4da642;
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: #4da642;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+.insomnia_block {
+  svg {
+    fill: 
+    #5647b8;
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: #5647b8;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+.github_block {
+  svg {
+    fill: 
+    #fff;
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: #fff;
+      display: block;
+      opacity: 1;
+    }
+  }
+}

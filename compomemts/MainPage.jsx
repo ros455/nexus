@@ -19,7 +19,7 @@ const MainPage = async ({lang}) => {
             <Portfolios lang={lang}/>
             <HorizontalSlider/>
             <FocusAtention lang={lang}/>
-            <SevenSteps lang={lang}/>
+            <SevenSteps page={page}/>
             <Reviews lang={lang}/>
             <SiteDream lang={lang}/>
         </>

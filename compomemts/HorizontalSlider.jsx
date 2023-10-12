@@ -1,17 +1,21 @@
 "use client";
 import React,{useState} from "react";
 import styles from "../style/horizontalSlider.module.scss";
-import { SiJquery } from "react-icons/si";
+import { SiJquery, SiInsomnia } from "react-icons/si";
 import {
   BiLogoJavascript,
   BiLogoReact,
   BiLogoNodejs,
   BiLogoTailwindCss,
+  BiLogoVisualStudio,
+  BiLogoMongodb
 } from "react-icons/bi";
 import { TiHtml5 } from "react-icons/ti";
 import { TbBrandNextjs } from "react-icons/tb";
 import { FaBootstrap, FaCss3Alt } from "react-icons/fa";
 import { BsGoogle } from "react-icons/bs";
+import { FiFigma } from "react-icons/fi";
+import { AiFillGithub } from "react-icons/ai";
 const HorizontalSlider = () => {
   const [dataArray] = useState([
     {
@@ -26,7 +30,7 @@ const HorizontalSlider = () => {
     },
     {
       icon: <BsGoogle className={styles.icon} />,
-      text: 'Google',
+      text: 'Google maps',
       styleBlock: styles.google_block
     },
     {
@@ -63,6 +67,31 @@ const HorizontalSlider = () => {
       icon: <SiJquery className={styles.icon} />,
       text: 'Jquery',
       styleBlock: styles.jquery_block
+    },
+    {
+      icon: <FiFigma className={styles.icon} />,
+      text: 'Figma',
+      styleBlock: styles.figma_block
+    },
+    {
+      icon: <BiLogoVisualStudio className={styles.icon} />,
+      text: 'VS Code',
+      styleBlock: styles.vs_code_block
+    },
+    {
+      icon: <BiLogoMongodb className={styles.icon} />,
+      text: 'Mongo DB',
+      styleBlock: styles.mongo_block
+    },
+    {
+      icon: <SiInsomnia className={styles.icon} />,
+      text: 'Insomnia',
+      styleBlock: styles.insomnia_block
+    },
+    {
+      icon: <AiFillGithub className={styles.icon} />,
+      text: 'GitHub',
+      styleBlock: styles.github_block
     },
   ])
   return (
