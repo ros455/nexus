@@ -1,0 +1,404 @@
+// Змінні
+$color-text: navy;
+$color-bg: rgb(253, 253, 253);
+$size: clamp(10rem, 1rem + 40vmin, 30rem);
+$gap: calc($size / 14);
+$duration: 100s;
+$scroll-end: calc(-50% - $gap);
+
+.container {
+  display: flex;
+  align-content: center;
+  overflow: hidden;
+  gap: $gap;
+  width: 100%;
+  color: $color-text;
+  background-color: $color-bg;
+}
+
+.marquee_1 {
+  display: flex;
+  overflow: hidden;
+  gap: $gap;
+  margin: 20px 0px;
+  
+  div {
+    display: flex;
+    align-items: center;
+    gap: $gap;
+    animation: scroll-x-left $duration linear infinite;
+    // width: 200%;
+    width: 400%;
+    animation-direction: reverse;
+    animation-delay: -5s;
+  }
+}
+.marquee_2 {
+  display: flex;
+  overflow: hidden;
+  gap: $gap;
+  margin: 20px 0px;
+  
+  div {
+    display: flex;
+    align-items: center;
+    gap: $gap;
+    animation: scroll-x-right $duration linear infinite;
+    // width: 300%;
+    width: 600%;
+    animation-delay: -5s;
+  }
+}
+
+@keyframes scroll-x-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX($scroll-end);
+  }
+}
+
+@keyframes scroll-x-right {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX($scroll-end);
+  }
+}
+
+.icon_block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $size;
+  fill: $color-text;
+  background: #131313;
+  padding: 10px 50px;
+  border-radius: 0.5rem;
+  height: 80px;
+  width: 200px;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.icon_block_text {
+  font-size: 20px;
+  position: absolute;
+  width: 100%;
+  bottom: 30px;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  font-weight: 800;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  color: white;
+}
+
+// .html_block {
+//   svg {}
+//   &:hover {
+//     svg {
+//       fill: #dd4b24;
+//       filter: blur(15px);
+//     }
+//     p {
+//       color: #dd4b24;
+//       display: block;
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// .css_block {
+//   &:hover {
+//     svg {
+//       fill: #3595cf;
+//       filter: blur(15px);
+//     }
+//     p {
+//       color: #3595cf;
+//       display: block;
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// .google_block {
+//   &:hover {
+//     svg {
+//       fill: rgb(15, 78, 196);
+//       filter: blur(15px);
+//     }
+//     p {
+//       color: rgb(15, 78, 196);
+//       display: block;
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// .tailwind_block {
+//   &:hover {
+//     svg {
+//       fill: #1babb4;
+//       filter: blur(15px);
+//     }
+//     p {
+//       color: #1babb4;
+//       display: block;
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// .bootstrap_block {
+//   &:hover {
+//     svg {
+//       fill: #4c2a7c;
+//       filter: blur(15px);
+//     }
+//     p {
+//       color: #6d10ee;
+//       display: block;
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// .node_block {
+//   &:hover {
+//     svg {
+//       fill: #56a444;
+//       filter: blur(15px);
+//     }
+//     p {
+//       color: #56a444;
+//       display: block;
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// .next_block {
+//   &:hover {
+//     svg {
+//       // fill: rgb(15, 78, 196);
+//       filter: blur(15px);
+//     }
+//     p {
+//       color: #fff;
+//       display: block;
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// .react_block {
+//   &:hover {
+//     svg {
+//       fill: #01cff2;
+//       filter: blur(15px);
+//     }
+//     p {
+//       color: #01cff2;
+//       display: block;
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// .js_block {
+//   &:hover {
+//     svg {
+//       fill: #e8d44d;
+//       filter: blur(15px);
+//     }
+//     p {
+//       color: #e8d44d;
+//       display: block;
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// .jquery_block {
+//   &:hover {
+//     svg {
+//       fill: #0865a7;
+//       filter: blur(15px);
+//     }
+//     p {
+//       color: #0865a7;
+//       display: block;
+//       opacity: 1;
+//     }
+//   }
+// }
+
+.html_block {
+  svg {
+    fill: #dd4b24;
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: #dd4b24;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.css_block {
+  svg {
+    fill: #3595cf;
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: #3595cf;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.google_block {
+  svg {
+    fill: rgb(15, 78, 196);
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: rgb(15, 78, 196);
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.tailwind_block {
+  svg {
+    fill: #1babb4;
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: #1babb4;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.bootstrap_block {
+  svg {
+    fill: #4c2a7c;
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: #6d10ee;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.node_block {
+  svg {
+    fill: #56a444;
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: #56a444;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.next_block {
+  svg {
+    // fill: #56a444;
+  }
+  &:hover {
+    svg {
+      // fill: rgb(15, 78, 196);
+      filter: blur(15px);
+    }
+    p {
+      color: #fff;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.react_block {
+  svg {
+    fill: #01cff2;
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: #01cff2;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.js_block {
+  svg {
+    fill: #e8d44d;
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: #e8d44d;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.jquery_block {
+  svg {
+    fill: #0865a7;
+  }
+  &:hover {
+    svg {
+      filter: blur(15px);
+    }
+    p {
+      color: #0865a7;
+      display: block;
+      opacity: 1;
+    }
+  }
+}

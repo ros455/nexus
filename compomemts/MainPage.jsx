@@ -8,6 +8,7 @@ import SiteDream from './componentsOnTheMainPage/SiteDream';
 import Reviews from './componentsOnTheMainPage/Reviews';
 import Portfolios from './componentsOnTheMainPage/Portfolios';
 import { getDictionary } from '@/lib/dictionary';
+import HorizontalSlider from './HorizontalSlider';
 const MainPage = async ({lang}) => {
     const { page } = await getDictionary(lang)
     return (
@@ -16,6 +17,7 @@ const MainPage = async ({lang}) => {
             <WhyWorkWithUs page={page}/>
             <WeGuaranteeAndMainDirections lang={lang}/>
             <Portfolios lang={lang}/>
+            <HorizontalSlider/>
             <FocusAtention lang={lang}/>
             <SevenSteps lang={lang}/>
             <Reviews lang={lang}/>
