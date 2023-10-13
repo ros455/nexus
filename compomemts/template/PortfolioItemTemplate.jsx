@@ -6,7 +6,6 @@ import Link from 'next/link';
 import styles from "../../style/portfolio.module.scss";
 import Image from 'next/image'
 const PortfolioItemTemplate = ({item}) => {
-    console.log('item', item);
     return (
         <div className={styles.portfolio_template_block}>
             <Link href={`/portfolios/${item._id}`} prefetch={false}>

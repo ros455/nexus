@@ -25,7 +25,7 @@
 
 
 .review_content_wrap {
-    width: 70%;
+    width: 100%;
 }
 
 .review_content_name_and_checked {
@@ -40,7 +40,7 @@
 
 .review_content_checked_wrap {
     border-radius: 5px;
-    background-color: $color_secondary;
+    background-color: #131313;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,6 +72,16 @@
 
 .review_content_text {
     line-height: 20px;
+}
+
+.star {
+    color: #ffd700; // Жовтий колір
+    font-size: 20px;
+    margin-right: 4px; // Додаємо невеличкий відступ між зірочками
+
+    &:last-child {
+        margin-right: 0; // Прибираємо відступ для останньої зірочки
+    }
 }
 
 @media(max-width: 900px) {

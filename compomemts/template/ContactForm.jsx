@@ -16,27 +16,37 @@ const ContactForm = ({page}) => {
         {
             icon: <BsFillTelephoneFill className={styles.messenger_icon}/>,
             url: 'Telephone',
-            text: page.ContactForm.telephone_text
+            text: page.ContactForm.telephone_text,
+            style_media: styles.phone,
+            style_active: styles.active_phone
         },
         {
             icon: <BiLogoTelegram className={styles.messenger_icon}/>,
             url: 'Telegram',
-            text: page.ContactForm.telegram_text
+            text: page.ContactForm.telegram_text,
+            style_media: styles.telegram,
+            style_active: styles.active_telegram
         },
         {
             icon: <SiViber className={styles.messenger_icon}/>,
             url: 'Viber',
-            text: page.ContactForm.viber_text
+            text: page.ContactForm.viber_text,
+            style_media: styles.viber,
+            style_active: styles.active_viber
         },
         {
             icon: <BsWhatsapp className={styles.messenger_icon}/>,
             url: 'Whatsapp',
-            text: page.ContactForm.whatsapp_text
+            text: page.ContactForm.whatsapp_text,
+            style_media: styles.whatsapp,
+            style_active: styles.active_whatsapp
         },
         {
             icon: <SiMaildotru className={styles.messenger_icon}/>,
             url: 'Mail',
-            text: page.ContactForm.mail_text
+            text: page.ContactForm.mail_text,
+            style_media: styles.mail,
+            style_active: styles.active_mail
         },
     ];
 
@@ -73,18 +83,18 @@ const ContactForm = ({page}) => {
         </div>
         <div className={styles.contact_form_phone_input_wrap}>
           <p className={styles.contact_form_text}>{page.ContactForm.text2}</p>
-          <div className={styles.contact_form_phone_input_messengers_wrap}>
+          <ul className={styles.wrapper}>
             {messengersArray.map((item) => (
-              <div
+              <li
                 onClick={() => handleChoseMessenger(item)}
                 key={item.url}
+                className={`${item.style_media} ${styles.icon} ${item.url == choseMassangerUrl ? item.style_active : ""}`}
               > 
-              <div className={`${styles.contact_form_icons_wrap_one} ${item.url == choseMassangerUrl ? styles.active_icon : ""}`}>
-                {item.icon}
-              </div>
-              </div>
+              <span className={styles.tooltip}>{item.url}</span>
+              <span className={styles.messenger_icon}>{item.icon}</span>
+              </li>
             ))}
-          </div>
+          </ul>
           <input
             className={styles.contact_form_input}
             onChange={(e) => setNumberOrMail(e.target.value)}

@@ -2,10 +2,10 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-
+import styles from '../style/switcherLanguage.module.scss';
 import { i18n } from '@/i18n.config'
 
-export default function LocaleSwitcher() {
+export default function LocaleSwitcher({lang}) {
   const pathName = usePathname()
 
   const redirectedPathName = (locale) => {
@@ -16,17 +16,17 @@ export default function LocaleSwitcher() {
   }
 
   return (
-    <ul className='flex gap-x-3'>
+    <ul className={styles.switcher_wrap}>
       {i18n.locales.map(locale => {
         return (
-          <li key={locale}>
+          <div key={locale} className={`${styles.switcher_block} ${locale == lang ? styles.switcher_active  : ''}`}>
             <Link
               href={redirectedPathName(locale)}
-              className='rounded-md border bg-black px-3 py-2 text-white'
+              className={styles.switcher_item}
             >
               {locale}
             </Link>
-          </li>
+          </div>
         )
       })}
     </ul>
