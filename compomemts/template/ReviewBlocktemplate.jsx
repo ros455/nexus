@@ -4,13 +4,13 @@ import Image from 'next/image'
 const ReviewBlocktemplate = ({item, page}) => {
     return (
         <div className={styles.review_wrap}>
-            <div className={styles.review_image_wrap}>
+            {/* <div className={styles.review_image_wrap}>
                 <Image src={`/img/${item.image}`} 
                 className={styles.review_image}
                 alt={item.image}
                 width={200}
                 height={200}/>
-            </div>
+            </div> */}
             <div className={styles.review_content_wrap}>
                 <div className={styles.review_content_date_and_star}>
                     <p className={styles.review_content_date}>{item.date}</p>
