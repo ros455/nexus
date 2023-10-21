@@ -6,11 +6,12 @@
     padding-top: 30px;
     display: flex;
     // background: linear-gradient(247deg, #f1f1f1 56.51%, #f4f1f2 100%);
-    // background: url(../public/img/fon-img-firsht-second2.png) linear-gradient(247deg, #f1f1f1 56.51%, #f4f1f2 100%);
-    // background-image: url(../public/img/fon-img-firsht-second2.png), linear-gradient(247deg, #f1f1f1 56.51%, #f4f1f2 100%);
+    // background: url(../public/img/section__main_background.svg);
+    background-image: url(../public/img/section__main_background.svg), linear-gradient(247deg, #f1f1f1 56.51%, #f4f1f2 100%);
     background-repeat: no-repeat;
-    background-position: right;
     background-size: contain;
+    background-position: top;
+    background-position-x: right;
 }
 
 .call_to_action_content_wrap {
@@ -53,16 +54,64 @@
 }
 
 .call_to_action_individual_approach_wrap {
-    border: 2px solid $color_warning;
-    border-radius: 50%;
-    transform: rotate(10deg);
+    // border: 2px solid $color_warning;
+    position: relative;
+
     width: 172px;
     height: 61px;
     position: absolute;
     right: -25%;
     bottom: -30%;
     z-index: 2;
+    // animation: spinAround 10s linear infinite; /* тут задаємо анімацію */
+     &::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid $color_warning;;
+        padding: 2px; // Товщина бордера
+        // background: linear-gradient(#FF5733, #33FF57);
+        border-radius: 50%;
+        // background-image: radial-gradient(circle, transparent calc(50% - 1px), #FF5733, #33FF57, transparent calc(50% + 1px));
+        transform: rotate(0deg);
+        top: 0;
+        animation: spinAround 10s linear infinite; /* тут задаємо анімацію */
+        // animation: spin 10s inherit inherit reverse ;
+        // animation-name: spin;
+        // animation-duration: 4s;
+        // animation-timing-function: inherit;
+        // animation-iteration-count: inherit;
+
+    }
+
 }
+
+// @keyframes spin{
+    
+// 	from{
+// 		transform: rotateY(0)
+
+//     }
+// 	to {
+// 		transform: rotateY(1turn)
+//     }
+// }
+
+
+@keyframes spinAround {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: rotateX(50deg) rotateY(10deg);
+    }
+    100% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+}
+
+
 
 .call_to_action_individual_approach_text {
     transform: rotate(-10deg);
