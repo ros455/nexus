@@ -6,48 +6,93 @@
     justify-content: center;
 }
 
+.round_main_block_wrap_hidden{
+    position: relative;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+}
+
 .round_second_block_wrap {
     border-radius: 50%;
     border: 1px solid black;
+    background: #131313;
     width: 120px;
     height: 120px;
-    position: relative;
+    // position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $color_light;
+    overflow: hidden;
+    // background-color: $color_light;
+    &::after{
+        content: '';
+        position: absolute;
+        top: -56px;
+        left: -29px;
+        width: 150%;
+        height: 50px;
+        background-color: #ffffff1e;
+        rotate: 326deg;
+        transition: all 0.5s ease-in-out;
+        filter: blur(10px);
+    }
     &:hover {
         color: $color_red_main;
+        .round_block_icon {
+            margin: 20px 0px 15px 0px;
+            width: 50px;
+            height: 50px;
+            color: #ffffff;
+            background: transparent;
+            filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, 0.644));
+        }
+        .round_block_text {
+            padding: 0 0 0 0;
+            filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, 0.644));
+        }
+        &::after{
+            top: 100px;
+            left: 20px;
+
+        }
     }
 }
 
 .round_block_icon {
-    margin: 10px 0px 15px 0px;
+    margin: 20px 0px 15px 14px;
     width: 50px;
     height: 50px;
-    color: $color_text_black;
+    color: #ffffff;
+    background: transparent;
+    transition: all 0.5s ease-in-out;
+    filter: drop-shadow(-6px 5px 5px rgba(255, 255, 255, 0.644));
+
 }
 
 .round_block_number_wrap {
     position: absolute;
     top: 10px;
     left: 0px;
-    border: 1px solid black;
+    border: 1px solid #fff;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: $color_white;
+    background-color: #131313;
 }
 
 .round_block_number {
     font-weight: 600;
-    color: $color_text_black;
+    color: #fff;
     text-align: center;
     padding-top: 3px;
 }
 
 .round_block_text {
-    color: $color_text_black;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+    padding: 0 0 0 5px;
+    filter: drop-shadow(-6px 5px 5px rgba(255, 255, 255, 0.644));
 }
 
 @media(max-width:460px) {

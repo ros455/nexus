@@ -6,6 +6,7 @@ import { getDictionary } from '@/lib/dictionary';
 
 const CallToAction = async ({lang}) => {
   const { page } = await getDictionary(lang)
+  
   return (
     <div className={styles.call_to_action_wrap}>
       <div className={styles.call_to_action_content_wrap}>
@@ -32,13 +33,13 @@ const CallToAction = async ({lang}) => {
           </button>
         </div>
       </div>
-      <div className={styles.call_to_action_img_wrap}>
+      {/* <div className={styles.call_to_action_img_wrap}>
         <Image className={styles.call_to_action_img} 
         src={ImgFonFirstSection} 
         alt="call-to-action"
         width={1000}
         height={1000}/>
-      </div>
+      </div> */}
       </div>
   );
 };

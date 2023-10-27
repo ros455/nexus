@@ -12,7 +12,7 @@ import {MdOutlineRocketLaunch} from 'react-icons/md';
 import styles from '../../style/sevenSteps.module.scss';
 import style from '../../style/roundBlock.module.scss';
 
-const SevenSteps = async ({page}) => {
+const SevenSteps = ({page}) => {
 
     const dataArray = [
         {
